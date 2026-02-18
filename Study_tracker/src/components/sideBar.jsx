@@ -3,7 +3,7 @@
 const SideBar = () => {
     return (
         <div>
-            sideBarr
+            side Barr
         </div>
     )
 }
