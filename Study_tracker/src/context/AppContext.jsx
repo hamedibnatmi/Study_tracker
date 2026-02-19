@@ -4,10 +4,22 @@ const AppContext = createContext()
 
 const AppContextProvider = ({ children }) => {
     const [user, setUser] = useState(null)
+    const [courses, setCourses] = useState([])
+    const [totalHours, setTotalHours] = useState(0)
+    const [totalCourses, setTotalCourses] = useState(0)
+    const [totalCompletedCourses, setTotalCompletedCourses] = useState(0)
 
     var value = {
         user,
-        setUser
+        setUser,
+        courses,
+        setCourses,
+        totalHours,
+        setTotalHours,
+        totalCourses,
+        setTotalCourses,
+        totalCompletedCourses,
+        setTotalCompletedCourses
     }
     return (
         <AppContext.Provider value={value}>

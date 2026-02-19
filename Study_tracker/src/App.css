@@ -1,5 +1,6 @@
 @import "./styles/sideBar.css";
 @import "./styles/Dashboard.css";
+@import "./styles/statusCard.css";
 
 #root {
   max-width: 100%;
@@ -13,6 +14,7 @@
   height: 100%;
   display: flex;
   flex-direction: row;
+  background-color: #f9fafb;
 
 }
 
