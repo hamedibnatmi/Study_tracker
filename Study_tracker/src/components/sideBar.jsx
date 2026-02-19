@@ -1,4 +1,4 @@
-
+import { NavLink } from "react-router-dom"
 
 const SideBar = () => {
     return (
@@ -7,17 +7,11 @@ const SideBar = () => {
                 <h2>Study Tracker</h2>
             </div>
             <div className="side-bar-content">
-                <ul>
-                    <li>
-                        <a href="#">Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="#">History</a>
-                    </li>
-                    <li>
-                        <a href="#">Profile</a>
-                    </li>
-                </ul>
+                <nav className="side-bar-nav">
+                    <NavLink className="NavLink" to="/">Dashboard</NavLink>
+                    <NavLink className="NavLink" to="/history">History</NavLink>
+                    <NavLink className="NavLink" to="/profile">Profile</NavLink>
+                </nav>
             </div>
         </div>
     )
