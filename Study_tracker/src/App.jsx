@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import supabase from './SupaBase'
+import SideBar from './components/sideBar'
 
 function App() {
 
@@ -19,9 +20,12 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className="app-container">
 
-        study tracker
+        <SideBar />
+        <div className="main-content" style={{ color: "#ffffffff" }}>
+          <h1>Study Trackers</h1>
+        </div>
       </div>
     </>
   )
