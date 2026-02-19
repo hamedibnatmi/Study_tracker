@@ -2,6 +2,10 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import supabase from './SupaBase'
 import SideBar from './components/sideBar'
+import { Routes, Route } from 'react-router-dom'
+import Dashboard from './pages/dashboard'
+import History from './pages/History'
+import Profile from './pages/Profile'
 
 function App() {
 
@@ -23,9 +27,11 @@ function App() {
       <div className="app-container">
 
         <SideBar />
-        <div className="main-content" style={{ color: "#ffffffff" }}>
-          <h1>Study Trackers</h1>
-        </div>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/history" element={<History />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
       </div>
     </>
   )
