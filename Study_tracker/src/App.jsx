@@ -12,14 +12,14 @@ function App() {
   // This example how to fetch data from Supabase
   useEffect(() => {
     async function fetchData() {
-      const { data, error } = await supabase.from("StudyTracker").select("*").eq("courses__userId", "user-001")
+      const { data, error } = await supabase.from("courses").select("*").eq("courses__userId", "user-001")
       if (error) {
         console.error("Error fetching courses:", error)
       } else {
         console.log("Fetched courses:", data)
       }
     }
-    fetchData()
+    // fetchData()
   }, [])
 
   return (

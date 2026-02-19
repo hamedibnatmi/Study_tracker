@@ -1,21 +1,46 @@
-import { createContext, useContext, useState } from "react"
+import { createContext, useContext, useState, useEffect } from "react"
+import supabase from "../SupaBase"
 const AppContext = createContext()
 
 
 const AppContextProvider = ({ children }) => {
-    const [user, setUser] = useState(null)
+    const [user, setUser] = useState("user-001")
     const [courses, setCourses] = useState([])
-    const [totalHours, setTotalHours] = useState(0)
+    const [totalHoursUntilNow, setTotalHoursUntilNow] = useState(0)
     const [totalCourses, setTotalCourses] = useState(0)
     const [totalCompletedCourses, setTotalCompletedCourses] = useState(0)
+
+    useEffect(() => {
+        async function fetchData() {
+
+            const { data, error } = await supabase
+                .from('courses')
+                .select(`
+                    *,
+                    study_sessions(duration, date),
+                    subtasks(id, title, completed)
+                `)
+                .eq('user_id', 'user-001');
+
+            setCourses(data)
+            setTotalCourses(data.length)
+            setTotalHoursUntilNow(data.reduce((acc, course) => acc + course.courses__hours, 0))
+            if (error) {
+                console.error("Error fetching courses:", error)
+            } else {
+                console.log("Fetched courses:", data)
+            }
+        }
+        fetchData()
+    }, [])
 
     var value = {
         user,
         setUser,
         courses,
         setCourses,
-        totalHours,
-        setTotalHours,
+        totalHoursUntilNow,
+        setTotalHoursUntilNow,
         totalCourses,
         setTotalCourses,
         totalCompletedCourses,
