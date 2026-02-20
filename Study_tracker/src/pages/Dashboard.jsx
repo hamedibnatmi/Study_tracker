@@ -1,3 +1,4 @@
+import ActiveSession from "../components/activeSession"
 import StatusCard from "../components/statusCard"
 import { useAppContext } from "../context/AppContext"
 import { Clock, BookOpen, Trophy } from "lucide-react"
@@ -15,6 +16,9 @@ const Dashboard = () => {
                 <StatusCard title="Today's Study Time" value={totalHoursUntilNow} icon={<Clock color="purple" background="purple" />} />
                 <StatusCard title="Courses" value={totalCourses} icon={<BookOpen color="blue" background="blue" />} />
                 <StatusCard title="Tasks Due Today" value={completedTasks} icon={<Trophy color="green" background="green" />} />
+            </div>
+            <div className="active-session-container">
+                <ActiveSession />
             </div>
         </div>
     )

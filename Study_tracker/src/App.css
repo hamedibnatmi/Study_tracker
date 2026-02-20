@@ -1,6 +1,7 @@
 @import "./styles/sideBar.css";
 @import "./styles/Dashboard.css";
 @import "./styles/statusCard.css";
+@import "./styles/activeSession.css";
 
 #root {
   max-width: 100%;
