@@ -2,6 +2,7 @@
 @import "./styles/Dashboard.css";
 @import "./styles/statusCard.css";
 @import "./styles/activeSession.css";
+@import "./styles/timer.css";
 
 #root {
   max-width: 100%;
