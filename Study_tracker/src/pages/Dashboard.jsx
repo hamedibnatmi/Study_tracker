@@ -4,7 +4,7 @@ import { Clock, BookOpen, Trophy } from "lucide-react"
 
 
 const Dashboard = () => {
-    const { totalHoursUntilNow, totalCourses, totalCompletedCourses } = useAppContext()
+    const { totalHoursUntilNow, totalCourses, completedTasks } = useAppContext()
     return (
         <div className="dashboard">
             <div className="title">
@@ -12,9 +12,9 @@ const Dashboard = () => {
                 <h5>Welcome to your Study Tracker! Here's your study progress today.</h5>
             </div>
             <div className="status-cards">
-                <StatusCard title="Total Hours" value={totalHoursUntilNow} icon={<Clock color="purple" background="purple" />} />
-                <StatusCard title="Total Courses" value={totalCourses} icon={<BookOpen color="blue" background="blue" />} />
-                <StatusCard title="Total Completed Courses" value={totalCompletedCourses} icon={<Trophy color="green" background="green" />} />
+                <StatusCard title="Today's Study Time" value={totalHoursUntilNow} icon={<Clock color="purple" background="purple" />} />
+                <StatusCard title="Courses" value={totalCourses} icon={<BookOpen color="blue" background="blue" />} />
+                <StatusCard title="Tasks Due Today" value={completedTasks} icon={<Trophy color="green" background="green" />} />
             </div>
         </div>
     )
