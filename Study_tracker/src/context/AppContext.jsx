@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react"
-import { getCompletedTasks } from "./calculateCourses"
+import { getCompletedTasks, getTodaysStudyime } from "./calculateCourses"
 import supabase from "../SupaBase"
 const AppContext = createContext()
 
@@ -27,7 +27,7 @@ const AppContextProvider = ({ children }) => {
             setCourses(data)
             setTotalCourses(data.length)
             setCompletedTasks(getCompletedTasks(data));
-            setTotalHoursUntilNow(data.reduce((acc, course) => acc + course.courses__hours, 0))
+            setTotalHoursUntilNow(getTodaysStudyime(data))
 
             if (error) {
                 console.error("Error fetching courses:", error)
