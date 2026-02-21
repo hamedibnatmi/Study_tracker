@@ -67,3 +67,24 @@ export function getCourseDuration(studySessions) {
     return totalTime;
 }
 
+export async function insertCourse(title, description, color, targetMinutes, userId) {
+    const { data, error } = await supabase
+        .from('courses')
+        .insert([
+            {
+                id: `course-${crypto.randomUUID()}`,
+                user_id: userId,
+                title: title,
+                description: description,
+                color: color,
+                target_minutes: targetMinutes
+            }
+        ])
+
+    if (error) {
+        console.error("Error inserting course:", error)
+    } else {
+        console.log("Course inserted:", data)
+    }
+}
+

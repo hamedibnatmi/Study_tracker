@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react"
-import { getCompletedTasks, getTodaysStudyime, insertStudySession, getSessions, getCourseDuration } from "./calculateCourses"
+import { getCompletedTasks, getTodaysStudyime, insertStudySession, getSessions, getCourseDuration, insertCourse } from "./calculateCourses"
 import supabase from "../SupaBase"
 const AppContext = createContext()
 
@@ -90,7 +90,8 @@ const AppContextProvider = ({ children }) => {
         selectedColor,
         setSelectedColor,
         showAddCourseForm,
-        setShowAddCourseForm
+        setShowAddCourseForm,
+        insertCourse
     }
     return (
         <AppContext.Provider value={value}>
