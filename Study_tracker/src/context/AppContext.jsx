@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react"
-import { getCompletedTasks, getTodaysStudyime } from "./calculateCourses"
+import { getCompletedTasks, getTodaysStudyime, insertStudySession, getSessions } from "./calculateCourses"
 import supabase from "../SupaBase"
 const AppContext = createContext()
 
@@ -14,6 +14,8 @@ const AppContextProvider = ({ children }) => {
     const [timer, setTimer] = useState(0)
     const [sessionStarted, setSessionStarted] = useState(false)
     const [currentCourse, setCurrentCourse] = useState(null)
+    const [studySessions, setStudySessions] = useState([])
+    const [refetch, setRefetch] = useState(false)
     useEffect(() => {
         async function fetchData() {
 
@@ -21,7 +23,7 @@ const AppContextProvider = ({ children }) => {
                 .from('courses')
                 .select(`
                     *,
-                    study_sessions(duration, date),
+                    study_sessions(id,duration, date),
                     subtasks(id, title, completed)
                 `)
                 .eq('user_id', user);
@@ -38,7 +40,15 @@ const AppContextProvider = ({ children }) => {
             }
         }
         fetchData()
-    }, [])
+    }, [refetch])
+
+    useEffect(() => {
+        async function fetchSessions() {
+            const sessions = await getSessions(user)
+            setStudySessions(sessions)
+        }
+        fetchSessions()
+    }, [refetch])
 
     var value = {
         user,
@@ -58,7 +68,12 @@ const AppContextProvider = ({ children }) => {
         sessionStarted,
         setSessionStarted,
         currentCourse,
-        setCurrentCourse
+        setCurrentCourse,
+        insertStudySession,
+        studySessions,
+        setStudySessions,
+        refetch,
+        setRefetch
     }
     return (
         <AppContext.Provider value={value}>
