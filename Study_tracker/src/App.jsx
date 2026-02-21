@@ -1,12 +1,8 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-<<<<<<< HEAD
 import History from './pages/History'
-=======
 import supabase from './SupaBase'
 import SideBar from './components/sideBar'
-
->>>>>>> main
 function App() {
 
   // This example how to fetch data from Supabase
@@ -23,21 +19,14 @@ function App() {
   }, [])
 
   return (
-    <>
-<<<<<<< HEAD
-      <div>
-        study tracker
-        <History/>
-=======
+
       <div className="app-container">
 
         <SideBar />
         <div className="main-content" style={{ color: "#ffffffff" }}>
           <h1>Study Trackers</h1>
         </div>
->>>>>>> main
       </div>
-    </>
   )
 }
 

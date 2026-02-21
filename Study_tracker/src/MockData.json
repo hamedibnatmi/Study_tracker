@@ -1,0 +1,1406 @@
+
+{
+  "users": [
+    {
+      "id": "user-001",
+      "name": "Emma Thompson",
+      "email": "emma.thompson@email.com",
+      "password": "password123",
+      "darkMode": false
+    },
+    {
+      "id": "user-002",
+      "name": "Michael Chen",
+      "email": "michael.chen@email.com",
+      "password": "password123",
+      "darkMode": true
+    },
+    {
+      "id": "user-003",
+      "name": "Sofia Rodriguez",
+      "email": "sofia.rodriguez@email.com",
+      "password": "password123",
+      "darkMode": false
+    },
+    {
+      "id": "user-004",
+      "name": "James Wilson",
+      "email": "james.wilson@email.com",
+      "password": "password123",
+      "darkMode": true
+    },
+    {
+      "id": "user-005",
+      "name": "Olivia Martinez",
+      "email": "olivia.martinez@email.com",
+      "password": "password123",
+      "darkMode": false
+    },
+    {
+      "id": "user-006",
+      "name": "Lucas Anderson",
+      "email": "lucas.anderson@email.com",
+      "password": "password123",
+      "darkMode": true
+    },
+    {
+      "id": "user-007",
+      "name": "Ava Johnson",
+      "email": "ava.johnson@email.com",
+      "password": "password123",
+      "darkMode": false
+    },
+    {
+      "id": "user-008",
+      "name": "Ethan Brown",
+      "email": "ethan.brown@email.com",
+      "password": "password123",
+      "darkMode": false
+    },
+    {
+      "id": "user-009",
+      "name": "Isabella Garcia",
+      "email": "isabella.garcia@email.com",
+      "password": "password123",
+      "darkMode": true
+    },
+    {
+      "id": "user-010",
+      "name": "Noah Davis",
+      "email": "noah.davis@email.com",
+      "password": "password123",
+      "darkMode": false
+    },
+    {
+      "id": "user-011",
+      "name": "Mia Taylor",
+      "email": "mia.taylor@email.com",
+      "password": "password123",
+      "darkMode": true
+    },
+    {
+      "id": "user-012",
+      "name": "Alexander Lee",
+      "email": "alexander.lee@email.com",
+      "password": "password123",
+      "darkMode": false
+    },
+    {
+      "id": "user-013",
+      "name": "Charlotte White",
+      "email": "charlotte.white@email.com",
+      "password": "password123",
+      "darkMode": true
+    }
+  ],
+  "courses": [
+    {
+      "id": "course-001",
+      "userId": "user-001",
+      "title": "Advanced Mathematics",
+      "description": "Calculus, Linear Algebra, and Differential Equations",
+      "color": "#9575cd",
+      "targetMinutes": 180
+    },
+    {
+      "id": "course-002",
+      "userId": "user-001",
+      "title": "Data Structures",
+      "description": "Arrays, Trees, Graphs, and Algorithm Analysis",
+      "color": "#90caf9",
+      "targetMinutes": 150
+    },
+    {
+      "id": "course-003",
+      "userId": "user-001",
+      "title": "Physics II",
+      "description": "Electricity, Magnetism, and Optics",
+      "color": "#80cbc4",
+      "targetMinutes": 120
+    },
+    {
+      "id": "course-004",
+      "userId": "user-001",
+      "title": "Web Development",
+      "description": "React, TypeScript, and Modern Frontend",
+      "color": "#b39ddb",
+      "targetMinutes": 200
+    },
+    {
+      "id": "course-005",
+      "userId": "user-001",
+      "title": "English Literature",
+      "description": "Shakespeare, Poetry, and Critical Analysis",
+      "color": "#f8bbd0",
+      "targetMinutes": 90
+    },
+    {
+      "id": "course-006",
+      "userId": "user-002",
+      "title": "Machine Learning",
+      "description": "Neural Networks, Deep Learning, and AI",
+      "color": "#9575cd",
+      "targetMinutes": 240
+    },
+    {
+      "id": "course-007",
+      "userId": "user-002",
+      "title": "Statistics",
+      "description": "Probability, Hypothesis Testing, Regression",
+      "color": "#ce93d8",
+      "targetMinutes": 160
+    },
+    {
+      "id": "course-008",
+      "userId": "user-002",
+      "title": "Database Systems",
+      "description": "SQL, NoSQL, and Database Design",
+      "color": "#90caf9",
+      "targetMinutes": 130
+    },
+    {
+      "id": "course-009",
+      "userId": "user-002",
+      "title": "Operating Systems",
+      "description": "Process Management, Memory, and Concurrency",
+      "color": "#80cbc4",
+      "targetMinutes": 140
+    },
+    {
+      "id": "course-010",
+      "userId": "user-002",
+      "title": "Computer Networks",
+      "description": "TCP/IP, Network Protocols, and Security",
+      "color": "#ffcc80",
+      "targetMinutes": 110
+    },
+    {
+      "id": "course-011",
+      "userId": "user-002",
+      "title": "Software Engineering",
+      "description": "Design Patterns, Architecture, Testing",
+      "color": "#b39ddb",
+      "targetMinutes": 150
+    },
+    {
+      "id": "course-012",
+      "userId": "user-003",
+      "title": "Organic Chemistry",
+      "description": "Reactions, Mechanisms, and Synthesis",
+      "color": "#80cbc4",
+      "targetMinutes": 200
+    },
+    {
+      "id": "course-013",
+      "userId": "user-003",
+      "title": "Biology",
+      "description": "Cell Biology, Genetics, and Evolution",
+      "color": "#9575cd",
+      "targetMinutes": 170
+    },
+    {
+      "id": "course-014",
+      "userId": "user-003",
+      "title": "Biochemistry",
+      "description": "Metabolism, Enzymes, and Molecular Biology",
+      "color": "#ce93d8",
+      "targetMinutes": 180
+    },
+    {
+      "id": "course-015",
+      "userId": "user-003",
+      "title": "Analytical Chemistry",
+      "description": "Spectroscopy, Chromatography, and Analysis",
+      "color": "#90caf9",
+      "targetMinutes": 140
+    },
+    {
+      "id": "course-016",
+      "userId": "user-004",
+      "title": "Corporate Finance",
+      "description": "Financial Management and Investment Analysis",
+      "color": "#9575cd",
+      "targetMinutes": 160
+    },
+    {
+      "id": "course-017",
+      "userId": "user-004",
+      "title": "Microeconomics",
+      "description": "Supply, Demand, and Market Structures",
+      "color": "#b39ddb",
+      "targetMinutes": 120
+    },
+    {
+      "id": "course-018",
+      "userId": "user-004",
+      "title": "Accounting",
+      "description": "Financial Statements and Cost Accounting",
+      "color": "#f8bbd0",
+      "targetMinutes": 140
+    },
+    {
+      "id": "course-019",
+      "userId": "user-004",
+      "title": "Business Strategy",
+      "description": "Competitive Analysis and Strategic Planning",
+      "color": "#ffcc80",
+      "targetMinutes": 100
+    },
+    {
+      "id": "course-020",
+      "userId": "user-004",
+      "title": "Marketing Management",
+      "description": "Consumer Behavior and Brand Strategy",
+      "color": "#80cbc4",
+      "targetMinutes": 110
+    },
+    {
+      "id": "course-021",
+      "userId": "user-004",
+      "title": "Operations Management",
+      "description": "Supply Chain and Process Optimization",
+      "color": "#ce93d8",
+      "targetMinutes": 130
+    },
+    {
+      "id": "course-022",
+      "userId": "user-004",
+      "title": "Business Law",
+      "description": "Contracts, Torts, and Corporate Law",
+      "color": "#90caf9",
+      "targetMinutes": 90
+    },
+    {
+      "id": "course-023",
+      "userId": "user-005",
+      "title": "Clinical Psychology",
+      "description": "Therapeutic Approaches and Mental Health",
+      "color": "#9575cd",
+      "targetMinutes": 180
+    },
+    {
+      "id": "course-024",
+      "userId": "user-005",
+      "title": "Developmental Psychology",
+      "description": "Child and Adolescent Development",
+      "color": "#ce93d8",
+      "targetMinutes": 150
+    },
+    {
+      "id": "course-025",
+      "userId": "user-005",
+      "title": "Neuroscience",
+      "description": "Brain Structure, Function, and Behavior",
+      "color": "#b39ddb",
+      "targetMinutes": 170
+    },
+    {
+      "id": "course-026",
+      "userId": "user-005",
+      "title": "Social Psychology",
+      "description": "Group Dynamics and Social Influence",
+      "color": "#90caf9",
+      "targetMinutes": 120
+    },
+    {
+      "id": "course-027",
+      "userId": "user-005",
+      "title": "Research Methods",
+      "description": "Experimental Design and Statistical Analysis",
+      "color": "#80cbc4",
+      "targetMinutes": 140
+    },
+    {
+      "id": "course-028",
+      "userId": "user-006",
+      "title": "Classical Mechanics",
+      "description": "Newton's Laws, Energy, and Momentum",
+      "color": "#90caf9",
+      "targetMinutes": 160
+    },
+    {
+      "id": "course-029",
+      "userId": "user-006",
+      "title": "Quantum Physics",
+      "description": "Wave Functions, Operators, and Uncertainty",
+      "color": "#9575cd",
+      "targetMinutes": 200
+    },
+    {
+      "id": "course-030",
+      "userId": "user-006",
+      "title": "Thermodynamics",
+      "description": "Heat, Work, and Entropy",
+      "color": "#ce93d8",
+      "targetMinutes": 140
+    },
+    {
+      "id": "course-031",
+      "userId": "user-006",
+      "title": "Electromagnetism",
+      "description": "Fields, Forces, and Maxwell's Equations",
+      "color": "#80cbc4",
+      "targetMinutes": 180
+    },
+    {
+      "id": "course-032",
+      "userId": "user-007",
+      "title": "Constitutional Law",
+      "description": "Rights, Liberties, and Government Structure",
+      "color": "#9575cd",
+      "targetMinutes": 200
+    },
+    {
+      "id": "course-033",
+      "userId": "user-007",
+      "title": "Criminal Law",
+      "description": "Offenses, Defenses, and Procedure",
+      "color": "#b39ddb",
+      "targetMinutes": 180
+    },
+    {
+      "id": "course-034",
+      "userId": "user-007",
+      "title": "Contract Law",
+      "description": "Formation, Performance, and Remedies",
+      "color": "#f8bbd0",
+      "targetMinutes": 160
+    },
+    {
+      "id": "course-035",
+      "userId": "user-007",
+      "title": "Civil Procedure",
+      "description": "Jurisdiction, Pleadings, and Discovery",
+      "color": "#90caf9",
+      "targetMinutes": 170
+    },
+    {
+      "id": "course-036",
+      "userId": "user-007",
+      "title": "Property Law",
+      "description": "Ownership, Estates, and Transactions",
+      "color": "#80cbc4",
+      "targetMinutes": 150
+    },
+    {
+      "id": "course-037",
+      "userId": "user-007",
+      "title": "Evidence Law",
+      "description": "Admissibility, Relevance, and Hearsay",
+      "color": "#ce93d8",
+      "targetMinutes": 140
+    },
+    {
+      "id": "course-038",
+      "userId": "user-008",
+      "title": "Digital Design",
+      "description": "Logic Gates, Circuits, and VHDL",
+      "color": "#9575cd",
+      "targetMinutes": 150
+    },
+    {
+      "id": "course-039",
+      "userId": "user-008",
+      "title": "Signal Processing",
+      "description": "Fourier Analysis and Filters",
+      "color": "#90caf9",
+      "targetMinutes": 160
+    },
+    {
+      "id": "course-040",
+      "userId": "user-008",
+      "title": "Control Systems",
+      "description": "Feedback, Stability, and Controllers",
+      "color": "#ce93d8",
+      "targetMinutes": 140
+    },
+    {
+      "id": "course-041",
+      "userId": "user-009",
+      "title": "Architectural Design",
+      "description": "Space Planning and Building Systems",
+      "color": "#9575cd",
+      "targetMinutes": 180
+    },
+    {
+      "id": "course-042",
+      "userId": "user-009",
+      "title": "Structural Engineering",
+      "description": "Load Analysis and Material Strength",
+      "color": "#90caf9",
+      "targetMinutes": 160
+    },
+    {
+      "id": "course-043",
+      "userId": "user-009",
+      "title": "Urban Planning",
+      "description": "City Design and Sustainable Development",
+      "color": "#80cbc4",
+      "targetMinutes": 130
+    },
+    {
+      "id": "course-044",
+      "userId": "user-009",
+      "title": "History of Architecture",
+      "description": "Classical to Modern Architecture",
+      "color": "#b39ddb",
+      "targetMinutes": 100
+    },
+    {
+      "id": "course-045",
+      "userId": "user-009",
+      "title": "Building Technology",
+      "description": "Construction Methods and Materials",
+      "color": "#f8bbd0",
+      "targetMinutes": 140
+    },
+    {
+      "id": "course-046",
+      "userId": "user-010",
+      "title": "International Relations",
+      "description": "Diplomacy, Conflict, and Global Politics",
+      "color": "#9575cd",
+      "targetMinutes": 140
+    },
+    {
+      "id": "course-047",
+      "userId": "user-010",
+      "title": "Political Theory",
+      "description": "Democracy, Justice, and Power",
+      "color": "#ce93d8",
+      "targetMinutes": 120
+    },
+    {
+      "id": "course-048",
+      "userId": "user-010",
+      "title": "Public Policy",
+      "description": "Policy Analysis and Implementation",
+      "color": "#90caf9",
+      "targetMinutes": 130
+    },
+    {
+      "id": "course-049",
+      "userId": "user-010",
+      "title": "Comparative Politics",
+      "description": "Government Systems Across Countries",
+      "color": "#80cbc4",
+      "targetMinutes": 110
+    },
+    {
+      "id": "course-050",
+      "userId": "user-011",
+      "title": "Renaissance Art",
+      "description": "Italian Masters and Artistic Innovation",
+      "color": "#f8bbd0",
+      "targetMinutes": 120
+    },
+    {
+      "id": "course-051",
+      "userId": "user-011",
+      "title": "Modern Art",
+      "description": "Impressionism to Contemporary Art",
+      "color": "#b39ddb",
+      "targetMinutes": 110
+    },
+    {
+      "id": "course-052",
+      "userId": "user-011",
+      "title": "Art Theory",
+      "description": "Aesthetics, Criticism, and Interpretation",
+      "color": "#9575cd",
+      "targetMinutes": 100
+    },
+    {
+      "id": "course-053",
+      "userId": "user-011",
+      "title": "Digital Art",
+      "description": "Photoshop, Illustrator, and 3D Modeling",
+      "color": "#90caf9",
+      "targetMinutes": 150
+    },
+    {
+      "id": "course-054",
+      "userId": "user-011",
+      "title": "Photography",
+      "description": "Composition, Lighting, and Post-Processing",
+      "color": "#ce93d8",
+      "targetMinutes": 130
+    },
+    {
+      "id": "course-055",
+      "userId": "user-012",
+      "title": "Medical Anatomy",
+      "description": "Human Body Structure and Systems",
+      "color": "#9575cd",
+      "targetMinutes": 220
+    },
+    {
+      "id": "course-056",
+      "userId": "user-012",
+      "title": "Pharmacology",
+      "description": "Drug Mechanisms and Clinical Applications",
+      "color": "#ce93d8",
+      "targetMinutes": 200
+    },
+    {
+      "id": "course-057",
+      "userId": "user-012",
+      "title": "Pathology",
+      "description": "Disease Mechanisms and Diagnosis",
+      "color": "#90caf9",
+      "targetMinutes": 210
+    },
+    {
+      "id": "course-058",
+      "userId": "user-012",
+      "title": "Clinical Medicine",
+      "description": "Patient Care and Treatment Protocols",
+      "color": "#80cbc4",
+      "targetMinutes": 240
+    },
+    {
+      "id": "course-059",
+      "userId": "user-012",
+      "title": "Medical Ethics",
+      "description": "Bioethics and Professional Conduct",
+      "color": "#b39ddb",
+      "targetMinutes": 100
+    },
+    {
+      "id": "course-060",
+      "userId": "user-012",
+      "title": "Public Health",
+      "description": "Epidemiology and Health Policy",
+      "color": "#f8bbd0",
+      "targetMinutes": 130
+    },
+    {
+      "id": "course-061",
+      "userId": "user-013",
+      "title": "Environmental Science",
+      "description": "Ecosystems, Climate, and Conservation",
+      "color": "#80cbc4",
+      "targetMinutes": 150
+    },
+    {
+      "id": "course-062",
+      "userId": "user-013",
+      "title": "Geology",
+      "description": "Earth Structure, Minerals, and Plate Tectonics",
+      "color": "#9575cd",
+      "targetMinutes": 140
+    },
+    {
+      "id": "course-063",
+      "userId": "user-013",
+      "title": "Meteorology",
+      "description": "Weather Patterns and Atmospheric Science",
+      "color": "#90caf9",
+      "targetMinutes": 120
+    },
+    {
+      "id": "course-064",
+      "userId": "user-013",
+      "title": "Oceanography",
+      "description": "Marine Biology and Ocean Dynamics",
+      "color": "#ce93d8",
+      "targetMinutes": 130
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "subtask-001",
+      "userId": "user-001",
+      "courseId": "course-001",
+      "title": "Complete Chapter 5: Integration Techniques",
+      "completed": true,
+      "dueDate": "2024-02-15"
+    },
+    {
+      "id": "subtask-002",
+      "userId": "user-001",
+      "courseId": "course-001",
+      "title": "Practice problem set 6.1-6.3",
+      "completed": false,
+      "dueDate": "2024-02-20"
+    },
+    {
+      "id": "subtask-003",
+      "userId": "user-001",
+      "courseId": "course-001",
+      "title": "Review for midterm exam",
+      "completed": false,
+      "dueDate": "2024-02-25"
+    },
+    {
+      "id": "subtask-004",
+      "userId": "user-001",
+      "courseId": "course-002",
+      "title": "Implement Binary Search Tree",
+      "completed": true,
+      "dueDate": "2024-02-16"
+    },
+    {
+      "id": "subtask-005",
+      "userId": "user-001",
+      "courseId": "course-002",
+      "title": "Study Graph Algorithms",
+      "completed": false,
+      "dueDate": "2024-02-22"
+    },
+    {
+      "id": "subtask-006",
+      "userId": "user-001",
+      "courseId": "course-003",
+      "title": "Lab report: Electromagnetic Induction",
+      "completed": false,
+      "dueDate": "2024-02-18"
+    },
+    {
+      "id": "subtask-007",
+      "userId": "user-001",
+      "courseId": "course-004",
+      "title": "Build Todo App with React Hooks",
+      "completed": true,
+      "dueDate": "2024-02-14"
+    },
+    {
+      "id": "subtask-008",
+      "userId": "user-001",
+      "courseId": "course-004",
+      "title": "Learn TypeScript Generics",
+      "completed": false,
+      "dueDate": "2024-02-21"
+    },
+    {
+      "id": "subtask-009",
+      "userId": "user-001",
+      "courseId": "course-005",
+      "title": "Read Hamlet Act 1-3",
+      "completed": true,
+      "dueDate": "2024-02-17"
+    },
+    {
+      "id": "subtask-010",
+      "userId": "user-002",
+      "courseId": "course-006",
+      "title": "Implement Neural Network from scratch",
+      "completed": false,
+      "dueDate": "2024-02-23"
+    },
+    {
+      "id": "subtask-011",
+      "userId": "user-002",
+      "courseId": "course-006",
+      "title": "Complete Kaggle competition entry",
+      "completed": false,
+      "dueDate": "2024-02-28"
+    },
+    {
+      "id": "subtask-012",
+      "userId": "user-002",
+      "courseId": "course-007",
+      "title": "Study Hypothesis Testing",
+      "completed": true,
+      "dueDate": "2024-02-15"
+    },
+    {
+      "id": "subtask-013",
+      "userId": "user-002",
+      "courseId": "course-008",
+      "title": "Design database schema for project",
+      "completed": false,
+      "dueDate": "2024-02-20"
+    },
+    {
+      "id": "subtask-014",
+      "userId": "user-002",
+      "courseId": "course-009",
+      "title": "Implement process scheduler",
+      "completed": true,
+      "dueDate": "2024-02-16"
+    },
+    {
+      "id": "subtask-015",
+      "userId": "user-003",
+      "courseId": "course-012",
+      "title": "Memorize functional group reactions",
+      "completed": false,
+      "dueDate": "2024-02-19"
+    },
+    {
+      "id": "subtask-016",
+      "userId": "user-003",
+      "courseId": "course-012",
+      "title": "Complete synthesis problem set",
+      "completed": false,
+      "dueDate": "2024-02-24"
+    },
+    {
+      "id": "subtask-017",
+      "userId": "user-003",
+      "courseId": "course-013",
+      "title": "Study cell signaling pathways",
+      "completed": true,
+      "dueDate": "2024-02-17"
+    },
+    {
+      "id": "subtask-018",
+      "userId": "user-004",
+      "courseId": "course-016",
+      "title": "Calculate NPV for case study",
+      "completed": false,
+      "dueDate": "2024-02-21"
+    },
+    {
+      "id": "subtask-019",
+      "userId": "user-004",
+      "courseId": "course-017",
+      "title": "Review market equilibrium concepts",
+      "completed": true,
+      "dueDate": "2024-02-18"
+    },
+    {
+      "id": "subtask-020",
+      "userId": "user-005",
+      "courseId": "course-023",
+      "title": "Read chapters on CBT therapy",
+      "completed": false,
+      "dueDate": "2024-02-22"
+    },
+    {
+      "id": "subtask-021",
+      "userId": "user-005",
+      "courseId": "course-024",
+      "title": "Watch Piaget development videos",
+      "completed": true,
+      "dueDate": "2024-02-16"
+    },
+    {
+      "id": "subtask-022",
+      "userId": "user-006",
+      "courseId": "course-029",
+      "title": "Solve Schrödinger equation problems",
+      "completed": false,
+      "dueDate": "2024-02-25"
+    },
+    {
+      "id": "subtask-023",
+      "userId": "user-007",
+      "courseId": "course-032",
+      "title": "Brief Supreme Court cases",
+      "completed": false,
+      "dueDate": "2024-02-27"
+    },
+    {
+      "id": "subtask-024",
+      "userId": "user-007",
+      "courseId": "course-033",
+      "title": "Outline criminal defenses",
+      "completed": true,
+      "dueDate": "2024-02-19"
+    },
+    {
+      "id": "subtask-025",
+      "userId": "user-008",
+      "courseId": "course-038",
+      "title": "Design 4-bit ALU circuit",
+      "completed": false,
+      "dueDate": "2024-02-23"
+    },
+    {
+      "id": "subtask-026",
+      "userId": "user-009",
+      "courseId": "course-041",
+      "title": "Complete building floor plan",
+      "completed": false,
+      "dueDate": "2024-02-26"
+    },
+    {
+      "id": "subtask-027",
+      "userId": "user-010",
+      "courseId": "course-046",
+      "title": "Analyze UN Security Council case",
+      "completed": true,
+      "dueDate": "2024-02-18"
+    },
+    {
+      "id": "subtask-028",
+      "userId": "user-011",
+      "courseId": "course-050",
+      "title": "Write essay on Michelangelo",
+      "completed": false,
+      "dueDate": "2024-02-24"
+    },
+    {
+      "id": "subtask-029",
+      "userId": "user-012",
+      "courseId": "course-055",
+      "title": "Memorize muscle origins and insertions",
+      "completed": false,
+      "dueDate": "2024-02-20"
+    },
+    {
+      "id": "subtask-030",
+      "userId": "user-012",
+      "courseId": "course-056",
+      "title": "Study cardiovascular drug classes",
+      "completed": true,
+      "dueDate": "2024-02-17"
+    },
+    {
+      "id": "subtask-031",
+      "userId": "user-013",
+      "courseId": "course-061",
+      "title": "Complete carbon cycle diagram",
+      "completed": false,
+      "dueDate": "2024-02-21"
+    }
+  ],
+  "studySessions": [
+    {
+      "id": "session-001",
+      "userId": "user-001",
+      "courseId": "course-001",
+      "duration": 65,
+      "date": "2024-02-14",
+      "notes": "Worked through integration by parts examples"
+    },
+    {
+      "id": "session-002",
+      "userId": "user-001",
+      "courseId": "course-001",
+      "duration": 90,
+      "date": "2024-02-15",
+      "notes": "Completed all practice problems"
+    },
+    {
+      "id": "session-003",
+      "userId": "user-001",
+      "courseId": "course-002",
+      "duration": 75,
+      "date": "2024-02-14",
+      "notes": "Built BST implementation in Python"
+    },
+    {
+      "id": "session-004",
+      "userId": "user-001",
+      "courseId": "course-002",
+      "duration": 50,
+      "date": "2024-02-16",
+      "notes": "Studied time complexity analysis"
+    },
+    {
+      "id": "session-005",
+      "userId": "user-001",
+      "courseId": "course-003",
+      "duration": 45,
+      "date": "2024-02-15",
+      "notes": "Lab work on electromagnetic experiments"
+    },
+    {
+      "id": "session-006",
+      "userId": "user-001",
+      "courseId": "course-004",
+      "duration": 120,
+      "date": "2024-02-13",
+      "notes": "Built full CRUD app with React and hooks"
+    },
+    {
+      "id": "session-007",
+      "userId": "user-001",
+      "courseId": "course-004",
+      "duration": 80,
+      "date": "2024-02-16",
+      "notes": "Learning advanced TypeScript patterns"
+    },
+    {
+      "id": "session-008",
+      "userId": "user-001",
+      "courseId": "course-005",
+      "duration": 60,
+      "date": "2024-02-17",
+      "notes": "Reading and analyzing Hamlet"
+    },
+    {
+      "id": "session-009",
+      "userId": "user-002",
+      "courseId": "course-006",
+      "duration": 135,
+      "date": "2024-02-14",
+      "notes": "Implemented forward propagation"
+    },
+    {
+      "id": "session-010",
+      "userId": "user-002",
+      "courseId": "course-006",
+      "duration": 100,
+      "date": "2024-02-16",
+      "notes": "Working on backpropagation algorithm"
+    },
+    {
+      "id": "session-011",
+      "userId": "user-002",
+      "courseId": "course-007",
+      "duration": 85,
+      "date": "2024-02-15",
+      "notes": "Statistical inference and hypothesis testing"
+    },
+    {
+      "id": "session-012",
+      "userId": "user-002",
+      "courseId": "course-008",
+      "duration": 70,
+      "date": "2024-02-14",
+      "notes": "Database normalization practice"
+    },
+    {
+      "id": "session-013",
+      "userId": "user-002",
+      "courseId": "course-009",
+      "duration": 90,
+      "date": "2024-02-15",
+      "notes": "Process scheduling algorithms"
+    },
+    {
+      "id": "session-014",
+      "userId": "user-002",
+      "courseId": "course-010",
+      "duration": 60,
+      "date": "2024-02-16",
+      "notes": "TCP protocol deep dive"
+    },
+    {
+      "id": "session-015",
+      "userId": "user-002",
+      "courseId": "course-011",
+      "duration": 75,
+      "date": "2024-02-17",
+      "notes": "Design patterns: Factory and Singleton"
+    },
+    {
+      "id": "session-016",
+      "userId": "user-003",
+      "courseId": "course-012",
+      "duration": 95,
+      "date": "2024-02-14",
+      "notes": "Organic reaction mechanisms practice"
+    },
+    {
+      "id": "session-017",
+      "userId": "user-003",
+      "courseId": "course-012",
+      "duration": 110,
+      "date": "2024-02-16",
+      "notes": "Synthesis pathway problems"
+    },
+    {
+      "id": "session-018",
+      "userId": "user-003",
+      "courseId": "course-013",
+      "duration": 80,
+      "date": "2024-02-15",
+      "notes": "Cell biology and signal transduction"
+    },
+    {
+      "id": "session-019",
+      "userId": "user-003",
+      "courseId": "course-014",
+      "duration": 70,
+      "date": "2024-02-17",
+      "notes": "Metabolic pathways review"
+    },
+    {
+      "id": "session-020",
+      "userId": "user-004",
+      "courseId": "course-016",
+      "duration": 90,
+      "date": "2024-02-14",
+      "notes": "Corporate valuation case study"
+    },
+    {
+      "id": "session-021",
+      "userId": "user-004",
+      "courseId": "course-017",
+      "duration": 65,
+      "date": "2024-02-15",
+      "notes": "Supply and demand equilibrium"
+    },
+    {
+      "id": "session-022",
+      "userId": "user-004",
+      "courseId": "course-018",
+      "duration": 75,
+      "date": "2024-02-16",
+      "notes": "Financial statement analysis"
+    },
+    {
+      "id": "session-023",
+      "userId": "user-004",
+      "courseId": "course-019",
+      "duration": 55,
+      "date": "2024-02-17",
+      "notes": "Porter's Five Forces analysis"
+    },
+    {
+      "id": "session-024",
+      "userId": "user-004",
+      "courseId": "course-020",
+      "duration": 60,
+      "date": "2024-02-14",
+      "notes": "Marketing strategy frameworks"
+    },
+    {
+      "id": "session-025",
+      "userId": "user-004",
+      "courseId": "course-021",
+      "duration": 70,
+      "date": "2024-02-15",
+      "notes": "Supply chain optimization"
+    },
+    {
+      "id": "session-026",
+      "userId": "user-004",
+      "courseId": "course-022",
+      "duration": 50,
+      "date": "2024-02-16",
+      "notes": "Contract law case studies"
+    },
+    {
+      "id": "session-027",
+      "userId": "user-005",
+      "courseId": "course-023",
+      "duration": 95,
+      "date": "2024-02-14",
+      "notes": "Cognitive behavioral therapy techniques"
+    },
+    {
+      "id": "session-028",
+      "userId": "user-005",
+      "courseId": "course-024",
+      "duration": 80,
+      "date": "2024-02-15",
+      "notes": "Child development theories"
+    },
+    {
+      "id": "session-029",
+      "userId": "user-005",
+      "courseId": "course-025",
+      "duration": 85,
+      "date": "2024-02-16",
+      "notes": "Brain anatomy and function"
+    },
+    {
+      "id": "session-030",
+      "userId": "user-005",
+      "courseId": "course-026",
+      "duration": 60,
+      "date": "2024-02-17",
+      "notes": "Group dynamics research"
+    },
+    {
+      "id": "session-031",
+      "userId": "user-005",
+      "courseId": "course-027",
+      "duration": 70,
+      "date": "2024-02-14",
+      "notes": "Experimental design practice"
+    },
+    {
+      "id": "session-032",
+      "userId": "user-006",
+      "courseId": "course-028",
+      "duration": 85,
+      "date": "2024-02-14",
+      "notes": "Newton's laws problem solving"
+    },
+    {
+      "id": "session-033",
+      "userId": "user-006",
+      "courseId": "course-029",
+      "duration": 120,
+      "date": "2024-02-15",
+      "notes": "Quantum mechanics wave functions"
+    },
+    {
+      "id": "session-034",
+      "userId": "user-006",
+      "courseId": "course-030",
+      "duration": 75,
+      "date": "2024-02-16",
+      "notes": "Thermodynamic cycles"
+    },
+    {
+      "id": "session-035",
+      "userId": "user-006",
+      "courseId": "course-031",
+      "duration": 90,
+      "date": "2024-02-17",
+      "notes": "Maxwell's equations applications"
+    },
+    {
+      "id": "session-036",
+      "userId": "user-007",
+      "courseId": "course-032",
+      "duration": 110,
+      "date": "2024-02-14",
+      "notes": "Constitutional rights analysis"
+    },
+    {
+      "id": "session-037",
+      "userId": "user-007",
+      "courseId": "course-033",
+      "duration": 95,
+      "date": "2024-02-15",
+      "notes": "Criminal law defenses outline"
+    },
+    {
+      "id": "session-038",
+      "userId": "user-007",
+      "courseId": "course-034",
+      "duration": 85,
+      "date": "2024-02-16",
+      "notes": "Contract formation elements"
+    },
+    {
+      "id": "session-039",
+      "userId": "user-007",
+      "courseId": "course-035",
+      "duration": 80,
+      "date": "2024-02-17",
+      "notes": "Civil procedure flowcharts"
+    },
+    {
+      "id": "session-040",
+      "userId": "user-007",
+      "courseId": "course-036",
+      "duration": 75,
+      "date": "2024-02-14",
+      "notes": "Property estates study"
+    },
+    {
+      "id": "session-041",
+      "userId": "user-007",
+      "courseId": "course-037",
+      "duration": 70,
+      "date": "2024-02-15",
+      "notes": "Hearsay exceptions memorization"
+    },
+    {
+      "id": "session-042",
+      "userId": "user-008",
+      "courseId": "course-038",
+      "duration": 90,
+      "date": "2024-02-14",
+      "notes": "Logic gate design practice"
+    },
+    {
+      "id": "session-043",
+      "userId": "user-008",
+      "courseId": "course-039",
+      "duration": 85,
+      "date": "2024-02-15",
+      "notes": "Fourier transform applications"
+    },
+    {
+      "id": "session-044",
+      "userId": "user-008",
+      "courseId": "course-040",
+      "duration": 70,
+      "date": "2024-02-16",
+      "notes": "Control system stability analysis"
+    },
+    {
+      "id": "session-045",
+      "userId": "user-009",
+      "courseId": "course-041",
+      "duration": 105,
+      "date": "2024-02-14",
+      "notes": "Floor plan design work"
+    },
+    {
+      "id": "session-046",
+      "userId": "user-009",
+      "courseId": "course-042",
+      "duration": 90,
+      "date": "2024-02-15",
+      "notes": "Structural load calculations"
+    },
+    {
+      "id": "session-047",
+      "userId": "user-009",
+      "courseId": "course-043",
+      "duration": 65,
+      "date": "2024-02-16",
+      "notes": "Sustainable city planning"
+    },
+    {
+      "id": "session-048",
+      "userId": "user-009",
+      "courseId": "course-044",
+      "duration": 55,
+      "date": "2024-02-17",
+      "notes": "Gothic architecture study"
+    },
+    {
+      "id": "session-049",
+      "userId": "user-009",
+      "courseId": "course-045",
+      "duration": 70,
+      "date": "2024-02-14",
+      "notes": "Building materials research"
+    },
+    {
+      "id": "session-050",
+      "userId": "user-010",
+      "courseId": "course-046",
+      "duration": 80,
+      "date": "2024-02-14",
+      "notes": "International relations theory"
+    },
+    {
+      "id": "session-051",
+      "userId": "user-010",
+      "courseId": "course-047",
+      "duration": 70,
+      "date": "2024-02-15",
+      "notes": "Political philosophy readings"
+    },
+    {
+      "id": "session-052",
+      "userId": "user-010",
+      "courseId": "course-048",
+      "duration": 65,
+      "date": "2024-02-16",
+      "notes": "Public policy analysis"
+    },
+    {
+      "id": "session-053",
+      "userId": "user-010",
+      "courseId": "course-049",
+      "duration": 60,
+      "date": "2024-02-17",
+      "notes": "Comparative government systems"
+    },
+    {
+      "id": "session-054",
+      "userId": "user-011",
+      "courseId": "course-050",
+      "duration": 75,
+      "date": "2024-02-14",
+      "notes": "Renaissance masters study"
+    },
+    {
+      "id": "session-055",
+      "userId": "user-011",
+      "courseId": "course-051",
+      "duration": 60,
+      "date": "2024-02-15",
+      "notes": "Impressionist movement analysis"
+    },
+    {
+      "id": "session-056",
+      "userId": "user-011",
+      "courseId": "course-052",
+      "duration": 55,
+      "date": "2024-02-16",
+      "notes": "Art criticism techniques"
+    },
+    {
+      "id": "session-057",
+      "userId": "user-011",
+      "courseId": "course-053",
+      "duration": 90,
+      "date": "2024-02-17",
+      "notes": "Photoshop advanced techniques"
+    },
+    {
+      "id": "session-058",
+      "userId": "user-011",
+      "courseId": "course-054",
+      "duration": 70,
+      "date": "2024-02-14",
+      "notes": "Portrait photography practice"
+    },
+    {
+      "id": "session-059",
+      "userId": "user-012",
+      "courseId": "course-055",
+      "duration": 125,
+      "date": "2024-02-14",
+      "notes": "Anatomy lab - muscular system"
+    },
+    {
+      "id": "session-060",
+      "userId": "user-012",
+      "courseId": "course-056",
+      "duration": 110,
+      "date": "2024-02-15",
+      "notes": "Pharmacology drug mechanisms"
+    },
+    {
+      "id": "session-061",
+      "userId": "user-012",
+      "courseId": "course-057",
+      "duration": 100,
+      "date": "2024-02-16",
+      "notes": "Disease pathology study"
+    },
+    {
+      "id": "session-062",
+      "userId": "user-012",
+      "courseId": "course-058",
+      "duration": 140,
+      "date": "2024-02-17",
+      "notes": "Clinical case reviews"
+    },
+    {
+      "id": "session-063",
+      "userId": "user-012",
+      "courseId": "course-059",
+      "duration": 55,
+      "date": "2024-02-14",
+      "notes": "Medical ethics discussions"
+    },
+    {
+      "id": "session-064",
+      "userId": "user-012",
+      "courseId": "course-060",
+      "duration": 65,
+      "date": "2024-02-15",
+      "notes": "Public health case studies"
+    },
+    {
+      "id": "session-065",
+      "userId": "user-013",
+      "courseId": "course-061",
+      "duration": 85,
+      "date": "2024-02-14",
+      "notes": "Ecosystem dynamics study"
+    },
+    {
+      "id": "session-066",
+      "userId": "user-013",
+      "courseId": "course-062",
+      "duration": 75,
+      "date": "2024-02-15",
+      "notes": "Rock and mineral identification"
+    },
+    {
+      "id": "session-067",
+      "userId": "user-013",
+      "courseId": "course-063",
+      "duration": 65,
+      "date": "2024-02-16",
+      "notes": "Weather forecasting practice"
+    },
+    {
+      "id": "session-068",
+      "userId": "user-013",
+      "courseId": "course-064",
+      "duration": 70,
+      "date": "2024-02-17",
+      "notes": "Ocean current patterns"
+    }
+  ]
+}
