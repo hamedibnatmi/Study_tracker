@@ -9,7 +9,7 @@ const Dashboard = () => {
     return (
         <div className="dashboard">
             <div className="title">
-                <h1>Dashboard</h1>
+                <h1>Home</h1>
                 <h5>Welcome to your Study Tracker! Here's your study progress today.</h5>
             </div>
             {loading && <div className="loader"><LoaderMantine size={"xl"} color="purple" /></div>}
