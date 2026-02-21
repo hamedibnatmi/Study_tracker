@@ -26,12 +26,14 @@ const MyCourses = () => {
                 <input type="text" id="course-title" placeholder="e.g. Mathematics" />
                 <label htmlFor="course-description">Description</label>
                 <input type="text" id="course-description" placeholder="e.g. Advanced Calculus" />
-                <label htmlFor="course-color">Course Color</label>
+                <label htmlFor="course-color">Color</label>
                 <div className="colors">
                     {['red', 'green', 'blue', 'yellow', 'purple', 'orange'].map((color) => (
                         <div className={`color square ${selectedColor === color ? "selected" : ""}`} style={{ backgroundColor: color }} onClick={() => setSelectedColor(color)} key={color}></div>
                     ))}
                 </div>
+                <label htmlFor="course-duration">Target Minutes</label>
+                <input type="number" id="course-duration" placeholder="e.g. 120" />
                 <div className="buttons">
                     <button className="add-btn" onClick={() => console.log("Add Course")} type="submit">Add Course</button>
                     <button className="cancel-btn" onClick={() => setShowAddCourseForm(!showAddCourseForm)} type="submit" >Cancel</button>
