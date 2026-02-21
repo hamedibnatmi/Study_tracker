@@ -56,15 +56,97 @@ h2 {
     min-width: 100%;
     border-radius: 10px;
     margin-bottom: 1rem;
-    background-color: #cba9fe;
+    background-color: purple;
     color: #fff;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
     font-size: large;
     font-weight: 500;
+    opacity: 0.7;
 }
 
 .add-course-btn:hover {
     background-color: purple;
+    opacity: 1;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    gap: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: #f7f9fa;
+}
+
+label {
+    margin-bottom: -5px;
+}
+
+input {
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.colors {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 10px 0px;
+}
+
+.square {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.selected {
+    outline: 2px solid purple;
+    outline-offset: 2px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.buttons button {
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: large;
+    font-weight: 500;
+    opacity: 0.7;
+}
+
+.buttons .add-btn:hover {
+    background-color: purple;
+    opacity: 1;
+}
+
+.add-btn {
+    background-color: purple;
+    color: #fff;
+}
+
+.cancel-btn {
+    background-color: #ccc;
+    color: #000;
+
+}
+
+.buttons .cancel-btn:hover {
+    background-color: #ccc;
+    opacity: 1;
 }

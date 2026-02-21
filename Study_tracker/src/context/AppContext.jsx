@@ -18,6 +18,8 @@ const AppContextProvider = ({ children }) => {
     const [refetch, setRefetch] = useState(false)
     const [loading, setLoading] = useState(true)
     const [totalCourseDuration, setTotalCourseDuration] = useState(0)
+    const [selectedColor, setSelectedColor] = useState("red")
+    const [showAddCourseForm, setShowAddCourseForm] = useState(false)
 
     useEffect(() => {
         async function fetchData() {
@@ -84,7 +86,11 @@ const AppContextProvider = ({ children }) => {
         setLoading,
         totalCourseDuration,
         setTotalCourseDuration,
-        getCourseDuration
+        getCourseDuration,
+        selectedColor,
+        setSelectedColor,
+        showAddCourseForm,
+        setShowAddCourseForm
     }
     return (
         <AppContext.Provider value={value}>

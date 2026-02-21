@@ -1,8 +1,7 @@
 
 import { useAppContext } from "../context/AppContext"
-import { Button } from "@mantine/core"
 const MyCourses = () => {
-    const { courses, getCourseDuration } = useAppContext()
+    const { courses, getCourseDuration, selectedColor, setSelectedColor, showAddCourseForm, setShowAddCourseForm } = useAppContext()
     return (
         <>
             <h2>My Courses</h2>
@@ -21,7 +20,23 @@ const MyCourses = () => {
                     </div>
                 </div>
             ))}
-            <button className="add-course-btn">+ Add New Course</button>
+            <button className="add-course-btn" onClick={() => setShowAddCourseForm(!showAddCourseForm)}>+ Add New Course</button>
+            {showAddCourseForm && <form action="" onSubmit={(e) => e.preventDefault()}>
+                <label htmlFor="course-title">Course Title</label>
+                <input type="text" id="course-title" placeholder="e.g. Mathematics" />
+                <label htmlFor="course-description">Description</label>
+                <input type="text" id="course-description" placeholder="e.g. Advanced Calculus" />
+                <label htmlFor="course-color">Course Color</label>
+                <div className="colors">
+                    {['red', 'green', 'blue', 'yellow', 'purple', 'orange'].map((color) => (
+                        <div className={`color square ${selectedColor === color ? "selected" : ""}`} style={{ backgroundColor: color }} onClick={() => setSelectedColor(color)} key={color}></div>
+                    ))}
+                </div>
+                <div className="buttons">
+                    <button className="add-btn" onClick={() => console.log("Add Course")} type="submit">Add Course</button>
+                    <button className="cancel-btn" onClick={() => setShowAddCourseForm(!showAddCourseForm)} type="submit" >Cancel</button>
+                </div>
+            </form>}
         </>
     )
 }
