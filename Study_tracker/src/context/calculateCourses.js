@@ -132,3 +132,17 @@ export async function insertSubTask(title, courseId, userId) {
         console.log("Subtask inserted:", data)
     }
 }
+
+export async function deleteCourse(courseId, userId) {
+    const { data, error } = await supabase
+        .from('courses')
+        .delete()
+        .eq('id', courseId)
+        .eq('user_id', userId);
+
+    if (error) {
+        console.error("Error deleting course:", error)
+    } else {
+        console.log("Course deleted:", data)
+    }
+}

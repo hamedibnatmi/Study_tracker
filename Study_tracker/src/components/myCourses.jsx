@@ -1,8 +1,8 @@
-
+import { SquareX } from "lucide-react"
 import { useAppContext } from "../context/AppContext"
 import { useState } from "react"
 const MyCourses = () => {
-    const { courses, getCourseDuration, selectedColor, setSelectedColor, showAddCourseForm, setShowAddCourseForm, insertCourse, user, setRefetch, refetch, setLoading } = useAppContext()
+    const { courses, getCourseDuration, deleteCourse, selectedColor, setSelectedColor, showAddCourseForm, setShowAddCourseForm, insertCourse, user, setRefetch, refetch, setLoading } = useAppContext()
     const [courseTitle, setCourseTitle] = useState("")
     const [courseDescription, setCourseDescription] = useState("")
     const [courseTargetMinutes, setCourseTargetMinutes] = useState("")
@@ -22,11 +22,23 @@ const MyCourses = () => {
             setLoading(false)
         }
     }
+    const handleDeleteCourse = async (courseId) => {
+        console.log(courseId)
+        setLoading(true)
+        try {
+            await deleteCourse(courseId, user)
+            setRefetch(!refetch)
+        } catch (error) {
+            console.log(error)
+            setLoading(false)
+        }
+    }
     return (
         <>
             <h2>My Courses</h2>
             {courses.map((course) => (
                 <div className="course-card" key={course.id}>
+                    <span className="delete-btn"><SquareX onClick={() => handleDeleteCourse(course.id)} /></span>
                     <div className="left-side">
                         <div className="circle" style={{ backgroundColor: course.color }} ></div>
                         <div className={`course-info ${course.target_minutes <= getCourseDuration(course.study_sessions) ? "done" : ""}`}>
