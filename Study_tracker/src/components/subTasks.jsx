@@ -1,7 +1,16 @@
 import { useAppContext } from "../context/AppContext"
 
 const SubTasks = () => {
-    const { courses, completedTasks, getAllSubTasks } = useAppContext()
+    const { courses, completedTasks, getAllSubTasks, checkSubTask, refetch, setRefetch, user } = useAppContext()
+    const handleCheck = async (subtaskId, completed) => {
+        if (completed) {
+            await checkSubTask(subtaskId, user, true)
+            setRefetch(!refetch)
+        } else {
+            await checkSubTask(subtaskId, user, false)
+            setRefetch(!refetch)
+        }
+    }
     return (<>
         <div className="subtasks">
             <div className="subtasks-title">
@@ -13,7 +22,7 @@ const SubTasks = () => {
 
                     <div className="subtask-item">
                         <div className={`subtask ${subtask.completed ? "completed" : ""}`} key={subtask.id}>
-                            <input type="checkbox" checked={subtask.completed} onChange={() => { }} />
+                            <input type="checkbox" checked={subtask.completed} onChange={(e) => handleCheck(subtask.id, e.target.checked)} />
                             <p>{subtask.title}</p>
                         </div>
                         <div className="course" style={{ backgroundColor: course.color }} key={course.id}>

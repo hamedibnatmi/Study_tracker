@@ -96,3 +96,39 @@ export async function insertCourse(title, description, color, targetMinutes, use
     }
 }
 
+export async function checkSubTask(subtaskId, userId, status) {
+    const { data, error } = await supabase
+        .from('subtasks')
+        .update({
+            completed: status
+        })
+        .eq('id', subtaskId)
+        .eq('user_id', userId);
+
+    if (error) {
+        console.error("Error checking subtask:", error)
+    } else {
+        console.log("Subtask checked:", data)
+    }
+}
+
+
+export async function insertSubTask(title, courseId, userId) {
+    const { data, error } = await supabase
+        .from('subtasks')
+        .insert([
+            {
+                id: `subtask-${crypto.randomUUID()}`,
+                user_id: userId,
+                course_id: courseId,
+                title: title,
+                completed: false
+            }
+        ])
+
+    if (error) {
+        console.error("Error inserting subtask:", error)
+    } else {
+        console.log("Subtask inserted:", data)
+    }
+}
