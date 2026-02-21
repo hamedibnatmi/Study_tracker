@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react"
-import { getCompletedTasks, getTodaysStudyime, insertStudySession, getSessions } from "./calculateCourses"
+import { getCompletedTasks, getTodaysStudyime, insertStudySession, getSessions, getCourseDuration } from "./calculateCourses"
 import supabase from "../SupaBase"
 const AppContext = createContext()
 
@@ -17,6 +17,8 @@ const AppContextProvider = ({ children }) => {
     const [studySessions, setStudySessions] = useState([])
     const [refetch, setRefetch] = useState(false)
     const [loading, setLoading] = useState(true)
+    const [totalCourseDuration, setTotalCourseDuration] = useState(0)
+
     useEffect(() => {
         async function fetchData() {
             setLoading(true)
@@ -31,7 +33,7 @@ const AppContextProvider = ({ children }) => {
                     .eq('user_id', user);
 
                 if (error) throw error;
-
+                console.log("Courses Data:", data)
                 setCourses(data)
                 setTotalCourses(data.length)
                 setCompletedTasks(getCompletedTasks(data));
@@ -79,7 +81,10 @@ const AppContextProvider = ({ children }) => {
         refetch,
         setRefetch,
         loading,
-        setLoading
+        setLoading,
+        totalCourseDuration,
+        setTotalCourseDuration,
+        getCourseDuration
     }
     return (
         <AppContext.Provider value={value}>

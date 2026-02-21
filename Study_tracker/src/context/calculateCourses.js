@@ -58,3 +58,12 @@ export async function getSessions(userId) {
         return data;
     }
 }
+
+export function getCourseDuration(studySessions) {
+    let totalTime = 0;
+    studySessions.forEach(element => {
+        totalTime += element.duration
+    });
+    return totalTime;
+}
+

@@ -3,7 +3,7 @@ import StatusCard from "../components/statusCard"
 import { useAppContext } from "../context/AppContext"
 import { Clock, BookOpen, Trophy } from "lucide-react"
 import { Loader as LoaderMantine } from "@mantine/core"
-
+import MyCourses from "../components/myCourses"
 const Dashboard = () => {
     const { totalHoursUntilNow, totalCourses, completedTasks, loading } = useAppContext()
     return (
@@ -20,6 +20,9 @@ const Dashboard = () => {
             </div>
             <div className="active-session-container">
                 <ActiveSession />
+            </div>
+            <div className="my-courses-container">
+                <MyCourses />
             </div>
         </div>
     )
