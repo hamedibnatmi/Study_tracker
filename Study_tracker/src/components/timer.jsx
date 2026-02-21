@@ -7,8 +7,9 @@ const Timer = () => {
     const handleStop = () => {
         setSessionStarted(false)
         async function insertSession() {
-            await insertStudySession(studySessions.length, timer, currentCourse.user_id, currentCourse.id)
             setCurrentCourse(null)
+            if (timer < 60) return
+            await insertStudySession(studySessions.length, timer, currentCourse.user_id, currentCourse.id)
             setRefetch(prev => !prev)
         }
         insertSession()

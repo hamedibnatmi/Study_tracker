@@ -9,7 +9,7 @@ const TimerCount = () => {
         }, 1000)
         return () => {
             clearInterval(timer)
-            setTimer(0)
+            setTimer(55)
         }
     }, [])
 

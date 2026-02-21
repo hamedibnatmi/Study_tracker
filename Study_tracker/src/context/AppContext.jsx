@@ -11,34 +11,38 @@ const AppContextProvider = ({ children }) => {
     const [totalCourses, setTotalCourses] = useState(0)
     const [totalCompletedCourses, setTotalCompletedCourses] = useState(0)
     const [completedTasks, setCompletedTasks] = useState(0)
-    const [timer, setTimer] = useState(0)
+    const [timer, setTimer] = useState(55)
     const [sessionStarted, setSessionStarted] = useState(false)
     const [currentCourse, setCurrentCourse] = useState(null)
     const [studySessions, setStudySessions] = useState([])
     const [refetch, setRefetch] = useState(false)
+    const [loading, setLoading] = useState(true)
     useEffect(() => {
         async function fetchData() {
-
-            const { data, error } = await supabase
-                .from('courses')
-                .select(`
+            setLoading(true)
+            try {
+                const { data, error } = await supabase
+                    .from('courses')
+                    .select(`
                     *,
                     study_sessions(id,duration, date),
                     subtasks(id, title, completed)
                 `)
-                .eq('user_id', user);
+                    .eq('user_id', user);
 
-            setCourses(data)
-            setTotalCourses(data.length)
-            setCompletedTasks(getCompletedTasks(data));
-            setTotalHoursUntilNow(getTodaysStudyime(data))
+                if (error) throw error;
 
-            if (error) {
+                setCourses(data)
+                setTotalCourses(data.length)
+                setCompletedTasks(getCompletedTasks(data));
+                setTotalHoursUntilNow(getTodaysStudyime(data))
+            } catch (error) {
                 console.error("Error fetching courses:", error)
-            } else {
-                console.log("Fetched courses:", data)
+            } finally {
+                setLoading(false)
             }
         }
+
         fetchData()
     }, [refetch])
 
@@ -73,7 +77,9 @@ const AppContextProvider = ({ children }) => {
         studySessions,
         setStudySessions,
         refetch,
-        setRefetch
+        setRefetch,
+        loading,
+        setLoading
     }
     return (
         <AppContext.Provider value={value}>

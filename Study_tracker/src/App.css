@@ -3,6 +3,8 @@
 @import "./styles/statusCard.css";
 @import "./styles/activeSession.css";
 @import "./styles/timer.css";
+@import '@mantine/core/styles.css';
+
 
 #root {
   max-width: 100%;

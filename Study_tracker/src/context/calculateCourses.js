@@ -15,7 +15,6 @@ export function getCompletedTasks(data) {
 export function getTodaysStudyime(data) {
     let totalTime = 0;
     const date = new Date().toISOString().slice(0, 10);
-    // const date = "2024-02-16" // mock date for now for testing
     data.forEach(element => {
         element.study_sessions.forEach(ss => {
             if (date == ss.date) totalTime += ss.duration

@@ -2,16 +2,17 @@ import ActiveSession from "../components/activeSession"
 import StatusCard from "../components/statusCard"
 import { useAppContext } from "../context/AppContext"
 import { Clock, BookOpen, Trophy } from "lucide-react"
-
+import { Loader as LoaderMantine } from "@mantine/core"
 
 const Dashboard = () => {
-    const { totalHoursUntilNow, totalCourses, completedTasks } = useAppContext()
+    const { totalHoursUntilNow, totalCourses, completedTasks, loading } = useAppContext()
     return (
         <div className="dashboard">
             <div className="title">
                 <h1>Dashboard</h1>
                 <h5>Welcome to your Study Tracker! Here's your study progress today.</h5>
             </div>
+            {loading && <div className="loader"><LoaderMantine size={"xl"} color="purple" /></div>}
             <div className="status-cards">
                 <StatusCard title="Today's Study Time" value={totalHoursUntilNow} icon={<Clock color="purple" background="purple" />} />
                 <StatusCard title="Courses" value={totalCourses} icon={<BookOpen color="blue" background="blue" />} />

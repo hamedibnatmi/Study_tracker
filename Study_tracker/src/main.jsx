@@ -10,7 +10,7 @@ import { AppContextProvider } from './context/AppContext.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <MantineProvider withGlobalStyles withNormalizeCSS>
+      <MantineProvider>
         <AppContextProvider>
           <App />
         </AppContextProvider>
