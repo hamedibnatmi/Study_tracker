@@ -11,7 +11,7 @@ const Timer = () => {
             if (timer < 60) return
             setLoading(true)
             try {
-                await insertStudySession(studySessions.length, timer, currentCourse.user_id, currentCourse.id)
+                await insertStudySession(timer, currentCourse.user_id, currentCourse.id)
                 setRefetch(prev => !prev)
             } catch (error) {
                 console.log(error)

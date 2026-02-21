@@ -5,7 +5,7 @@ const AppContext = createContext()
 
 
 const AppContextProvider = ({ children }) => {
-    const [user, setUser] = useState("user-001")
+    const [user, setUser] = useState("user-002")
     const [courses, setCourses] = useState([])
     const [totalHoursUntilNow, setTotalHoursUntilNow] = useState(0)
     const [totalCourses, setTotalCourses] = useState(0)
