@@ -1,6 +1,6 @@
 
 import { useAppContext } from "../context/AppContext"
-
+import { Button } from "@mantine/core"
 const MyCourses = () => {
     const { courses, getCourseDuration } = useAppContext()
     return (
@@ -21,6 +21,7 @@ const MyCourses = () => {
                     </div>
                 </div>
             ))}
+            <button className="add-course-btn">+ Add New Course</button>
         </>
     )
 }
