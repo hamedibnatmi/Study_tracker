@@ -2,19 +2,25 @@
 import { useAppContext } from "../context/AppContext"
 import { useState } from "react"
 const MyCourses = () => {
-    const { courses, getCourseDuration, selectedColor, setSelectedColor, showAddCourseForm, setShowAddCourseForm, insertCourse, user, setRefetch, refetch } = useAppContext()
+    const { courses, getCourseDuration, selectedColor, setSelectedColor, showAddCourseForm, setShowAddCourseForm, insertCourse, user, setRefetch, refetch, setLoading } = useAppContext()
     const [courseTitle, setCourseTitle] = useState("")
     const [courseDescription, setCourseDescription] = useState("")
     const [courseTargetMinutes, setCourseTargetMinutes] = useState("")
     const handleAddCourse = async (e) => {
         e.preventDefault()
         if (!courseTitle || !courseDescription || !courseTargetMinutes) return
-        await insertCourse(courseTitle, courseDescription, selectedColor, courseTargetMinutes, user)
-        setShowAddCourseForm(false)
-        setCourseTitle("")
-        setCourseDescription("")
-        setCourseTargetMinutes("")
-        setRefetch(!refetch)
+        setLoading(true)
+        try {
+            await insertCourse(courseTitle, courseDescription, selectedColor, courseTargetMinutes, user)
+            setShowAddCourseForm(false)
+            setCourseTitle("")
+            setCourseDescription("")
+            setCourseTargetMinutes("")
+            setRefetch(!refetch)
+        } catch (error) {
+            console.log(error)
+            setLoading(false)
+        }
     }
     return (
         <>
