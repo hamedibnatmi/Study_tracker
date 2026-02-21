@@ -25,6 +25,17 @@
 .course-info {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+}
+
+.course-info.done {
+    text-decoration: line-through;
+    text-decoration-color: red;
+}
+
+.course-info .target-minutes {
+    font-size: small;
+    font-weight: 500;
 }
 
 .course-info span {

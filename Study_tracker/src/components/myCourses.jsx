@@ -22,10 +22,11 @@ const MyCourses = () => {
             {courses.map((course) => (
                 <div className="course-card" key={course.id}>
                     <div className="left-side">
-                        <div className="circle" style={{ backgroundColor: course.color }}></div>
-                        <div className="course-info">
+                        <div className="circle" style={{ backgroundColor: course.color }} ></div>
+                        <div className={`course-info ${course.target_minutes <= getCourseDuration(course.study_sessions) ? "done" : ""}`}>
                             <span>{course.title}</span>
                             <p>{course.description}</p>
+                            <p className="target-minutes">Target: {course.target_minutes} min</p>
                         </div>
                     </div>
                     <div className="right-side">
