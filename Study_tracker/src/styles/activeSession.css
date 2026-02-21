@@ -39,6 +39,11 @@
     gap: 5px;
 }
 
+.course-button:hover {
+    background-color: #dfcafd;
+    cursor: pointer;
+}
+
 .course-button svg {
     min-width: 20px;
     min-height: 20px;

@@ -11,7 +11,9 @@ const AppContextProvider = ({ children }) => {
     const [totalCourses, setTotalCourses] = useState(0)
     const [totalCompletedCourses, setTotalCompletedCourses] = useState(0)
     const [completedTasks, setCompletedTasks] = useState(0)
-
+    const [timer, setTimer] = useState(0)
+    const [sessionStarted, setSessionStarted] = useState(false)
+    const [currentCourse, setCurrentCourse] = useState(null)
     useEffect(() => {
         async function fetchData() {
 
@@ -50,7 +52,13 @@ const AppContextProvider = ({ children }) => {
         totalCompletedCourses,
         setTotalCompletedCourses,
         completedTasks,
-        setCompletedTasks
+        setCompletedTasks,
+        timer,
+        setTimer,
+        sessionStarted,
+        setSessionStarted,
+        currentCourse,
+        setCurrentCourse
     }
     return (
         <AppContext.Provider value={value}>
