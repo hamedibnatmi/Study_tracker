@@ -2,15 +2,22 @@ import { Square } from "lucide-react"
 import { useAppContext } from "../context/AppContext"
 import TimerCount from "./timerCount"
 const Timer = () => {
-    const { setSessionStarted, currentCourse, setCurrentCourse, timer, insertStudySession, studySessions, setRefetch } = useAppContext()
+    const { setSessionStarted, currentCourse, setCurrentCourse, timer, insertStudySession, studySessions, setRefetch, setLoading } = useAppContext()
 
     const handleStop = () => {
         setSessionStarted(false)
         async function insertSession() {
             setCurrentCourse(null)
             if (timer < 60) return
-            await insertStudySession(studySessions.length, timer, currentCourse.user_id, currentCourse.id)
-            setRefetch(prev => !prev)
+            setLoading(true)
+            try {
+                await insertStudySession(studySessions.length, timer, currentCourse.user_id, currentCourse.id)
+                setRefetch(prev => !prev)
+            } catch (error) {
+                console.log(error)
+                setLoading(false)
+            }
+
         }
         insertSession()
     }
