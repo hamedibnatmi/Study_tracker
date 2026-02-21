@@ -12,6 +12,14 @@ export function getCompletedTasks(data) {
     return counter
 }
 
+export function getAllSubTasks(data) {
+    let subtasks = [];
+    data.forEach(element => {
+        subtasks = subtasks.concat(element.subtasks)
+    });
+    return subtasks
+}
+
 export function getTodaysStudyime(data) {
     let totalTime = 0;
     const date = new Date().toISOString().slice(0, 10);

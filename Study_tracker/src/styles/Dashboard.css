@@ -39,3 +39,7 @@
     border-radius: 10px;
     padding: 1rem;
 }
+
+.subtasks-container {
+    width: 100%;
+}
