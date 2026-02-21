@@ -5,7 +5,7 @@ const AppContext = createContext()
 
 
 const AppContextProvider = ({ children }) => {
-    const [user, setUser] = useState("user-002")
+    const [user, setUser] = useState(null)
     const [courses, setCourses] = useState([])
     const [totalHoursUntilNow, setTotalHoursUntilNow] = useState(0)
     const [totalCourses, setTotalCourses] = useState(0)
@@ -48,7 +48,7 @@ const AppContextProvider = ({ children }) => {
         }
 
         fetchData()
-    }, [refetch])
+    }, [refetch, user])
 
     useEffect(() => {
         async function fetchSessions() {
@@ -56,7 +56,7 @@ const AppContextProvider = ({ children }) => {
             setStudySessions(sessions)
         }
         fetchSessions()
-    }, [refetch])
+    }, [refetch, user])
 
     var value = {
         user,

@@ -5,16 +5,19 @@ import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import { MantineProvider } from '@mantine/core'
 import { AppContextProvider } from './context/AppContext.jsx'
+import { AuthProvider } from './context/AuthContext.jsx'
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
-      <MantineProvider>
-        <AppContextProvider>
-          <App />
-        </AppContextProvider>
-      </MantineProvider>
-    </BrowserRouter>
-  </StrictMode>,
+    <AuthProvider>
+      <BrowserRouter>
+        <MantineProvider>
+          <AppContextProvider>
+            <App />
+          </AppContextProvider>
+        </MantineProvider>
+      </BrowserRouter>
+    </AuthProvider>
+  </StrictMode>
 )
