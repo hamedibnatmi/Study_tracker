@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router-dom'
 import Dashboard from './pages/dashboard'
 import History from './pages/History'
 import Profile from './pages/Profile'
+import LogIn from './pages/LogIn'
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/history" element={<History />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/login" element={<LogIn />} />
         </Routes>
       </div>
     </>
