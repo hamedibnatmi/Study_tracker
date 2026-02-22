@@ -1,0 +1,56 @@
+.active-session-container {
+    width: 100%;
+}
+
+.active-session {
+    background-color: #c39bfe;
+    color: #000;
+    padding: 20px;
+    margin: 0x 20px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.course-buttons {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    align-items: center;
+}
+
+
+.course-button {
+    background-color: #cba9fe;
+    color: #000;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    font-size: small;
+    padding: 10px;
+    gap: 5px;
+}
+
+.course-button:hover {
+    background-color: #dfcafd;
+    cursor: pointer;
+}
+
+.course-button svg {
+    min-width: 20px;
+    min-height: 20px;
+}
+
+.course-button p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

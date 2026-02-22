@@ -1,0 +1,179 @@
+.course-card {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+}
+
+.left-side {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.circle {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #ccc;
+}
+
+.course-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.course-info.done {
+    text-decoration: line-through;
+    text-decoration-color: red;
+}
+
+.course-info .target-minutes {
+    font-size: small;
+    font-weight: 500;
+}
+
+.course-info span {
+    margin-top: -10px;
+    text-align: start;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.course-card .right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0px;
+}
+
+.duration {
+    font-weight: bold;
+}
+
+.total {
+    font-weight: 200;
+}
+
+h2 {
+    text-align: start;
+    margin-bottom: 1rem;
+}
+
+.add-course-btn {
+    min-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    background-color: purple;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: large;
+    font-weight: 500;
+    opacity: 0.7;
+}
+
+.add-course-btn:hover {
+    background-color: purple;
+    opacity: 1;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    gap: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: #f7f9fa;
+}
+
+label {
+    margin-bottom: -5px;
+}
+
+input {
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.colors {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 10px 0px;
+}
+
+.square {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.selected {
+    outline: 2px solid purple;
+    outline-offset: 2px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.buttons button {
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: large;
+    font-weight: 500;
+    opacity: 0.7;
+}
+
+.buttons .add-btn:hover {
+    background-color: purple;
+    opacity: 1;
+}
+
+.add-btn {
+    background-color: purple;
+    color: #fff;
+}
+
+.cancel-btn {
+    background-color: #ccc;
+    color: #000;
+
+}
+
+.buttons .cancel-btn:hover {
+    background-color: #ccc;
+    opacity: 1;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+    color: red;
+}

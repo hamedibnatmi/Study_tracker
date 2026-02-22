@@ -9,7 +9,7 @@ const SideBar = () => {
             </div>
             <div className="side-bar-content">
                 <nav className="side-bar-nav">
-                    <NavLink className="NavLink" to="/"><House />Dashboard</NavLink>
+                    <NavLink className="NavLink" to="/"><House />Home</NavLink>
                     <NavLink className="NavLink" to="/history"><History />History</NavLink>
                     <NavLink className="NavLink" to="/profile"><User />Profile</NavLink>
                 </nav>

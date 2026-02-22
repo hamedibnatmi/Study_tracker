@@ -1,0 +1,29 @@
+.status-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.status-card-header p {
+    text-align: left;
+}
+
+.status-card {
+    background-color: #ffffff;
+    color: #000;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.status-card-content p {
+    font-size: 20px;
+    font-weight: bold;
+}
