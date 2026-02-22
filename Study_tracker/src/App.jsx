@@ -9,6 +9,7 @@ import Dashboard from './pages/dashboard'
 import History from './pages/History'
 import Profile from './pages/Profile'
 import LogIn from './pages/LogIn'
+import CoursePage from './pages/CoursePage'
 import { Navigate } from 'react-router-dom'
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
           <Route path="/history" element={user ? <History /> : <LogIn />} />
           <Route path="/profile" element={user ? <Profile /> : <LogIn />} />
           <Route path="/login" element={user ? <Navigate to="/" /> : <LogIn />} />
+          <Route path="/course/:id" element={user ? <CoursePage /> : <LogIn />} />
         </Routes>
       </div>
     </>

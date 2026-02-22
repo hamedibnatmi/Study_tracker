@@ -113,15 +113,16 @@ export async function checkSubTask(subtaskId, userId, status) {
 }
 
 
-export async function insertSubTask(title, courseId, userId) {
+export async function insertSubTask(title, dueDate, userId, courseId) {
     const { data, error } = await supabase
         .from('subtasks')
         .insert([
             {
-                id: `subtask-${crypto.randomUUID()}`,
+                id: crypto.randomUUID(),
                 user_id: userId,
                 course_id: courseId,
                 title: title,
+                due_date: dueDate,
                 completed: false
             }
         ])

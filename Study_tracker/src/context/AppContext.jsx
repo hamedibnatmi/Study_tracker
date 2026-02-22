@@ -21,6 +21,7 @@ const AppContextProvider = ({ children }) => {
     const [totalCourseDuration, setTotalCourseDuration] = useState(0)
     const [selectedColor, setSelectedColor] = useState("red")
     const [showAddCourseForm, setShowAddCourseForm] = useState(false)
+    const [course, setCourse] = useState(null)
 
     useEffect(() => {
         async function fetchData() {
@@ -95,7 +96,9 @@ const AppContextProvider = ({ children }) => {
         getAllSubTasks,
         checkSubTask,
         insertSubTask,
-        deleteCourse
+        deleteCourse,
+        course,
+        setCourse
     }
     return (
         <AppContext.Provider value={value}>

@@ -45,3 +45,26 @@
     align-items: flex-start;
     gap: 10px;
 }
+
+.add-subtask {
+    cursor: pointer;
+    color: purple;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.add-subtask:hover {
+    background-color: purple;
+    color: #fff;
+}
+
+.right-side {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
