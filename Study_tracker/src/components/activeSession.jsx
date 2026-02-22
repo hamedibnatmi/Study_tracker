@@ -8,15 +8,14 @@ const ActiveSession = () => {
         <>
             <div className="active-session">
                 <h4>Active Study Session</h4>
-                <p>No active session. Start studying a course!</p>
-                <div className="course-buttons">
+                {courses.length === 0 ? <p>No active session. Start studying a course!</p> : <div className="course-buttons">
                     {!sessionStarted && courses.map((course) => (
                         <div key={course.id} className="course-button" onClick={() => { setCurrentCourse(course); setSessionStarted(true) }}>
                             <Play size={20} />
                             <p title={course.title}>{course.title}</p>
                         </div>
                     ))}
-                </div>
+                </div>}
                 {sessionStarted && <Timer />}
             </div>
         </>

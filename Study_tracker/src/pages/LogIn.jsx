@@ -1,15 +1,13 @@
 import { useAuth } from "../context/AuthContext"
-import { useAppContext } from "../context/AppContext"
 import { useNavigate } from "react-router-dom"
 
 const LogIn = () => {
-    const { email, setEmail, password, setPassword, login, error, setError } = useAuth()
-    const { setUser, user } = useAppContext()
+    const { email, setEmail, password, setPassword, login, error, setError, setUser } = useAuth()
     const navigate = useNavigate()
     const handleLogin = async () => {
         const data = await login(email, password)
-        setUser(data[0].id)
-        if (user) navigate("/")
+        setUser(data.user.id)
+        if (data) navigate("/")
         else setError(error)
     }
     return (

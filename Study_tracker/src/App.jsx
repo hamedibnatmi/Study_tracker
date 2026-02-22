@@ -1,13 +1,15 @@
 import { useEffect } from 'react'
+import { useAuth } from './context/AuthContext'
 import './App.css'
 import supabase from './SupaBase'
 import SideBar from './components/sideBar'
 import { Routes, Route } from 'react-router-dom'
+
 import Dashboard from './pages/dashboard'
 import History from './pages/History'
 import Profile from './pages/Profile'
 import LogIn from './pages/LogIn'
-
+import { Navigate } from 'react-router-dom'
 function App() {
 
   // This example how to fetch data from Supabase
@@ -23,16 +25,17 @@ function App() {
     // fetchData()
   }, [])
 
+  const { user } = useAuth()
+
   return (
     <>
       <div className="app-container">
-
         <SideBar />
         <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/history" element={<History />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/login" element={<LogIn />} />
+          <Route path="/" element={user ? <Dashboard /> : <LogIn />} />
+          <Route path="/history" element={user ? <History /> : <LogIn />} />
+          <Route path="/profile" element={user ? <Profile /> : <LogIn />} />
+          <Route path="/login" element={user ? <Navigate to="/" /> : <LogIn />} />
         </Routes>
       </div>
     </>

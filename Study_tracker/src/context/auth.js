@@ -2,7 +2,15 @@ import supabase from "../SupaBase"
 
 
 export const login = async (email, password) => {
-    const { data, error } = await supabase.from('users').select('*').eq('email', email).eq('password', password)
-    if (error) throw error
-    return data
+    const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+    })
+    if (error) {
+        console.log("Error logging in:", error.message)
+        return null
+    } else {
+        console.log("User logged in successfully:", data)
+        return data
+    }
 }

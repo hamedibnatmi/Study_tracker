@@ -1,11 +1,12 @@
 import { createContext, useContext, useState, useEffect } from "react"
 import { getCompletedTasks, getAllSubTasks, getTodaysStudyime, insertStudySession, getSessions, getCourseDuration, insertCourse, checkSubTask, insertSubTask, deleteCourse } from "./calculateCourses"
+import { useAuth } from "../context/AuthContext"
 import supabase from "../SupaBase"
 const AppContext = createContext()
 
 
 const AppContextProvider = ({ children }) => {
-    const [user, setUser] = useState(null)
+    const { user } = useAuth()
     const [courses, setCourses] = useState([])
     const [totalHoursUntilNow, setTotalHoursUntilNow] = useState(0)
     const [totalCourses, setTotalCourses] = useState(0)
@@ -60,7 +61,6 @@ const AppContextProvider = ({ children }) => {
 
     var value = {
         user,
-        setUser,
         courses,
         setCourses,
         totalHoursUntilNow,
