@@ -1,11 +1,14 @@
 @import "./styles/sideBar.css";
 
 #root {
-  max-width: 100%;
-  /* background-color: aqua; */
-  margin: 0 auto;
-  text-align: center;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
 }
+
+
 
 .app-container {
   width: 100%;
@@ -14,6 +17,21 @@
   flex-direction: row;
 
 }
+.app-container {
+  width: 100%;
+  min-height: 100vh;   
+  display: flex;
+  flex-direction: row;
+}
+
+
+.main-content {
+  flex: 1;
+  min-width: 0;        
+  padding: 24px;
+  background: #f9fafb; 
+}
+
 
 .logo {
   height: 6em;

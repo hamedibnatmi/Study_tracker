@@ -6,6 +6,8 @@ import { Routes, Route } from 'react-router-dom'
 import Dashboard from './pages/dashboard'
 import History from './pages/History'
 import Profile from './pages/Profile'
+import Login from "./pages/LogIn";
+
 
 function App() {
 
@@ -23,17 +25,26 @@ function App() {
   }, [])
 
   return (
-    <>
-      <div className="app-container">
+    <Routes>
+      <Route path="/login" element={<Login />} />
 
-        <SideBar />
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/history" element={<History />} />
-          <Route path="/profile" element={<Profile />} />
-        </Routes>
-      </div>
-    </>
+      
+      <Route
+        path="/*"
+        element={
+          <div className="app-container">
+            <SideBar />
+            <main className="main-content">
+              <Routes>
+                <Route path="/" element={<Dashboard />} />
+                <Route path="/history" element={<History />} />
+                <Route path="/profile" element={<Profile />} />
+              </Routes>
+            </main>
+          </div>
+        }
+      />
+    </Routes>
   )
 }
 

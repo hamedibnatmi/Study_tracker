@@ -1,0 +1,289 @@
+/* Profile.css */
+
+.profile-page {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #111827;
+  padding: 0
+  ;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.profile-container {
+  max-width: 1060px;
+}
+
+.profile-header h1 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 800;
+}
+
+.profile-header p {
+  margin: 6px 0 18px;
+  color: #6b7280;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px 18px 16px;
+  box-shadow: 0 12px 30px rgba(17, 24, 39, 0.05);
+  margin: 0 0 18px 0;
+}
+
+.card-title {
+  margin: 0 0 14px 0;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.account-row {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 6px 0 14px;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: #7c3aed; /* purple */
+  color: #ffffff;
+}
+
+.account-info .name {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.account-info .email {
+  margin-top: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #4b5563;
+}
+
+.divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 6px 0 16px;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.stat-box {
+  background: #f9fafb;
+  border: 1px solid #eef2f7;
+  border-radius: 10px;
+  padding: 14px 12px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 22px;
+  font-weight: 900;
+  margin-bottom: 2px;
+}
+
+.stat-label {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+/* Settings */
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #eef2f7;
+  background: #fbfbfc;
+  border-radius: 10px;
+  padding: 14px 14px;
+}
+
+.setting-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.setting-icon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.setting-title {
+  font-weight: 800;
+}
+
+.setting-subtitle {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+/* Switch */
+.switch {
+  position: relative;
+  width: 52px;
+  height: 30px;
+  display: inline-block;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  background: #d1d5db;
+  border-radius: 999px;
+  transition: 150ms ease;
+}
+
+.slider::after {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  left: 4px;
+  top: 4px;
+  background: #ffffff;
+  border-radius: 999px;
+  transition: 150ms ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.switch input:checked + .slider {
+  background: #7c3aed;
+}
+
+.switch input:checked + .slider::after {
+  transform: translateX(22px);
+}
+
+/* Logout button */
+.logout-btn {
+  margin-top: 12px;
+  width: 100%;
+  height: 48px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 2px solid #ef4444;
+  color: #ef4444;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: 120ms ease;
+}
+
+.logout-btn:hover {
+  background: rgba(239, 68, 68, 0.06);
+}
+
+/* Study Statistics */
+.subjects {
+  display: grid;
+  gap: 14px;
+}
+
+.subject-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.subject-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+}
+
+.subject-min {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.bar {
+  height: 10px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 999px;
+}
+
+/* Purple variations like the screenshot */
+.p1 { background: #7c3aed; }
+.p2 { background: #8b5cf6; }
+.p3 { background: #a855f7; }
+
+/* bar fill colors */
+.bar-fill.p1 { background: #7c3aed; }
+.bar-fill.p2 { background: #8b5cf6; }
+.bar-fill.p3 { background: #a855f7; }
+
+/* (Optional) Dark mode demo داخل الصفحة نفسها */
+.profile-page.dark {
+  background: #0b1220;
+  color: #e5e7eb;
+}
+
+.profile-page.dark .profile-header p,
+.profile-page.dark .stat-label,
+.profile-page.dark .setting-subtitle,
+.profile-page.dark .subject-min,
+.profile-page.dark .account-info .email {
+  color: #a7b0c0;
+}
+
+.profile-page.dark .card {
+  background: #0f172a;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.profile-page.dark .stat-box,
+.profile-page.dark .setting-row,
+.profile-page.dark .setting-icon {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.profile-page.dark .bar {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.profile-page.dark .logout-btn {
+  background: transparent;
+}
