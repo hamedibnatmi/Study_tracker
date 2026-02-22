@@ -15,7 +15,7 @@ const Dashboard = () => {
             </div>
             {loading && <div className="loader"><LoaderMantine size={"xl"} color="purple" /></div>}
             <div className="status-cards">
-                <StatusCard title="Today's Study Time" value={totalHoursUntilNow} icon={<Clock color="purple" background="purple" />} />
+                <StatusCard title="Today's Study Time" value={totalHoursUntilNow} icon={<Clock color="purple" background="purple" />} time="min" />
                 <StatusCard title="Courses" value={totalCourses} icon={<BookOpen color="blue" background="blue" />} />
                 <StatusCard title="Tasks Due Today" value={completedTasks} icon={<Trophy color="green" background="green" />} />
             </div>
