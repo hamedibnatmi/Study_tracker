@@ -147,3 +147,17 @@ export async function deleteCourse(courseId, userId) {
         console.log("Course deleted:", data)
     }
 }
+
+export async function getProfile(userId) {
+    const { data, error } = await supabase
+        .from('profiles')
+        .select('*')
+        .eq('id', userId);
+
+    if (error) {
+        console.error("Error fetching profile:", error)
+    } else {
+        console.log("Fetched profile:", data)
+        return data;
+    }
+}
