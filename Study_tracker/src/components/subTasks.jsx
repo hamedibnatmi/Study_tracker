@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom"
 const SubTasks = () => {
     const params = useParams()
     const { courses, completedTasks, getAllSubTasks, checkSubTask, refetch, setRefetch, user, insertSubTask } = useAppContext()
+    console.log("course", courses.find((course) => course.id === params.id))
     const handleCheck = async (subtaskId, completed) => {
         if (completed) {
             await checkSubTask(subtaskId, user, true)
@@ -19,6 +20,7 @@ const SubTasks = () => {
     const [courseId, setCourseId] = useState(params.id)
     const [subTaskTitle, setSubTaskTitle] = useState("")
     const [subTaskDueDate, setSubTaskDueDate] = useState("")
+    const course = courses.find((course) => course.id === params.id)
     const handleAddSubTask = async (e) => {
         e.preventDefault()
         await insertSubTask(subTaskTitle, subTaskDueDate, user, courseId)
@@ -44,7 +46,7 @@ const SubTasks = () => {
                 </form>
             </div>
             }
-            {courses.map((course) => (
+            {!isCoursePage && courses.map((course) => (
                 course.subtasks.map((subtask) => (
 
                     <div className="subtask-item">
@@ -57,6 +59,17 @@ const SubTasks = () => {
                         </div>
                     </div>
                 ))
+            ))}
+            {isCoursePage && course.subtasks.map((subtask) => (
+                <div className="subtask-item">
+                    <div className={`subtask ${subtask.completed ? "completed" : ""}`} key={subtask.id}>
+                        <input type="checkbox" checked={subtask.completed} onChange={(e) => handleCheck(subtask.id, e.target.checked)} />
+                        <p>{subtask.title}</p>
+                    </div>
+                    <div className="course" style={{ backgroundColor: course.color }} key={course.id}>
+                        <p>{course.title}</p>
+                    </div>
+                </div>
             ))}
         </div>
     </>)
