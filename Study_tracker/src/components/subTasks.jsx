@@ -1,8 +1,10 @@
 import { useAppContext } from "../context/AppContext"
 import { Plus } from "lucide-react"
 import { useState } from "react"
+import { useParams } from "react-router-dom"
 const SubTasks = () => {
-    const { courses, completedTasks, getAllSubTasks, checkSubTask, refetch, setRefetch, user } = useAppContext()
+    const params = useParams()
+    const { courses, completedTasks, getAllSubTasks, checkSubTask, refetch, setRefetch, user, insertSubTask } = useAppContext()
     const handleCheck = async (subtaskId, completed) => {
         if (completed) {
             await checkSubTask(subtaskId, user, true)
@@ -14,6 +16,15 @@ const SubTasks = () => {
     }
     const [isCoursePage, setIsCoursePage] = useState(window.location.pathname.includes("/course"))
     const [showAddSubTaskForm, setShowAddSubTaskForm] = useState(false)
+    const [courseId, setCourseId] = useState(params.id)
+    const [subTaskTitle, setSubTaskTitle] = useState("")
+    const [subTaskDueDate, setSubTaskDueDate] = useState("")
+    const handleAddSubTask = async (e) => {
+        e.preventDefault()
+        await insertSubTask(subTaskTitle, subTaskDueDate, user, courseId)
+        setRefetch(!refetch)
+        setShowAddSubTaskForm(false)
+    }
     return (<>
         <div className="subtasks">
             <div className="subtasks-title">
@@ -24,11 +35,11 @@ const SubTasks = () => {
                 </div>
             </div>
             {showAddSubTaskForm && <div className="add-task-form">
-                <form action="">
+                <form action="" onSubmit={handleAddSubTask}>
                     <label htmlFor="task-title">Task Title</label>
-                    <input type="text" id="task-title" placeholder="Enter Task Title" />
+                    <input type="text" id="task-title" placeholder="Enter Task Title" value={subTaskTitle} onChange={(e) => setSubTaskTitle(e.target.value)} />
                     <label htmlFor="task-due-date">Task Due Date</label>
-                    <input type="date" id="task-due-date" placeholder="Enter Task Due Date" />
+                    <input type="date" id="task-due-date" placeholder="Enter Task Due Date" value={subTaskDueDate} onChange={(e) => setSubTaskDueDate(e.target.value)} />
                     <button type="submit">Add Task</button>
                 </form>
             </div>
