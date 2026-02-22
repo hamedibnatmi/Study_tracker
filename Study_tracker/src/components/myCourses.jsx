@@ -1,11 +1,13 @@
 import { SquareX } from "lucide-react"
 import { useAppContext } from "../context/AppContext"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 const MyCourses = () => {
     const { courses, getCourseDuration, deleteCourse, selectedColor, setSelectedColor, showAddCourseForm, setShowAddCourseForm, insertCourse, user, setRefetch, refetch, setLoading } = useAppContext()
     const [courseTitle, setCourseTitle] = useState("")
     const [courseDescription, setCourseDescription] = useState("")
     const [courseTargetMinutes, setCourseTargetMinutes] = useState("")
+    const navigate = useNavigate()
     const handleAddCourse = async (e) => {
         e.preventDefault()
         if (!courseTitle || !courseDescription || !courseTargetMinutes) return
@@ -37,7 +39,7 @@ const MyCourses = () => {
         <>
             <h2>My Courses</h2>
             {courses.map((course) => (
-                <div className="course-card" key={course.id}>
+                <div className="course-card" key={course.id} onClick={() => navigate(`/course/${course.id}`)}>
                     <span className="delete-btn"><SquareX onClick={() => handleDeleteCourse(course.id)} /></span>
                     <div className="left-side">
                         <div className="circle" style={{ backgroundColor: course.color }} ></div>
