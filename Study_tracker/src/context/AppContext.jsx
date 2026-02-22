@@ -1,42 +1,66 @@
 import { createContext, useContext, useState, useEffect } from "react"
+import { getCompletedTasks, getAllSubTasks, getTodaysStudyime, insertStudySession, getSessions, getCourseDuration, insertCourse, checkSubTask, insertSubTask, deleteCourse } from "./calculateCourses"
+import { useAuth } from "../context/AuthContext"
 import supabase from "../SupaBase"
 const AppContext = createContext()
 
 
 const AppContextProvider = ({ children }) => {
-    const [user, setUser] = useState("user-001")
+    const { user } = useAuth()
     const [courses, setCourses] = useState([])
     const [totalHoursUntilNow, setTotalHoursUntilNow] = useState(0)
     const [totalCourses, setTotalCourses] = useState(0)
     const [totalCompletedCourses, setTotalCompletedCourses] = useState(0)
+    const [completedTasks, setCompletedTasks] = useState(0)
+    const [timer, setTimer] = useState(55)
+    const [sessionStarted, setSessionStarted] = useState(false)
+    const [currentCourse, setCurrentCourse] = useState(null)
+    const [studySessions, setStudySessions] = useState([])
+    const [refetch, setRefetch] = useState(false)
+    const [loading, setLoading] = useState(true)
+    const [totalCourseDuration, setTotalCourseDuration] = useState(0)
+    const [selectedColor, setSelectedColor] = useState("red")
+    const [showAddCourseForm, setShowAddCourseForm] = useState(false)
 
     useEffect(() => {
         async function fetchData() {
-
-            const { data, error } = await supabase
-                .from('courses')
-                .select(`
+            setLoading(true)
+            try {
+                const { data, error } = await supabase
+                    .from('courses')
+                    .select(`
                     *,
-                    study_sessions(duration, date),
+                    study_sessions(id,duration, date),
                     subtasks(id, title, completed)
                 `)
-                .eq('user_id', 'user-001');
+                    .eq('user_id', user);
 
-            setCourses(data)
-            setTotalCourses(data.length)
-            setTotalHoursUntilNow(data.reduce((acc, course) => acc + course.courses__hours, 0))
-            if (error) {
+                if (error) throw error;
+                console.log("Courses Data:", data)
+                setCourses(data)
+                setTotalCourses(data.length)
+                setCompletedTasks(getCompletedTasks(data));
+                setTotalHoursUntilNow(getTodaysStudyime(data))
+            } catch (error) {
                 console.error("Error fetching courses:", error)
-            } else {
-                console.log("Fetched courses:", data)
+            } finally {
+                setLoading(false)
             }
         }
+
         fetchData()
-    }, [])
+    }, [refetch, user])
+
+    useEffect(() => {
+        async function fetchSessions() {
+            const sessions = await getSessions(user)
+            setStudySessions(sessions)
+        }
+        fetchSessions()
+    }, [refetch, user])
 
     var value = {
         user,
-        setUser,
         courses,
         setCourses,
         totalHoursUntilNow,
@@ -44,7 +68,34 @@ const AppContextProvider = ({ children }) => {
         totalCourses,
         setTotalCourses,
         totalCompletedCourses,
-        setTotalCompletedCourses
+        setTotalCompletedCourses,
+        completedTasks,
+        setCompletedTasks,
+        timer,
+        setTimer,
+        sessionStarted,
+        setSessionStarted,
+        currentCourse,
+        setCurrentCourse,
+        insertStudySession,
+        studySessions,
+        setStudySessions,
+        refetch,
+        setRefetch,
+        loading,
+        setLoading,
+        totalCourseDuration,
+        setTotalCourseDuration,
+        getCourseDuration,
+        selectedColor,
+        setSelectedColor,
+        showAddCourseForm,
+        setShowAddCourseForm,
+        insertCourse,
+        getAllSubTasks,
+        checkSubTask,
+        insertSubTask,
+        deleteCourse
     }
     return (
         <AppContext.Provider value={value}>
