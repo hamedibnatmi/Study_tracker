@@ -1,30 +1,18 @@
 import { useState } from "react";
 import { BookOpen } from "lucide-react";
 import "../styles/LogIn.css";
+import { useAuth } from "../context/AuthContext"
+import { useNavigate } from "react-router-dom"
 
 export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(false);
-
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError("");
-
-    if (!email || !password) {
-      setError("Please enter both email and password.");
-      return;
-    }
-
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      alert("Login clicked! (UI only)");
-    }, 1200);
-  };
+  const { email, setEmail, password, setPassword, login, error, setError, setUser } = useAuth()
+  const navigate = useNavigate()
+  const handleLogin = async () => {
+    const data = await login(email, password)
+    setUser(data.user.id)
+    if (data) navigate("/")
+    else setError(error)
+    };
 
   return (
     <div className="login-page">
@@ -42,22 +30,12 @@ export default function Login() {
           <form onSubmit={handleSubmit} className="login-form">
             <div className="field">
               <label>Email address</label>
-              <input
-                type="email"
-                placeholder="you@example.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
+              <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
             </div>
 
             <div className="field">
               <label>Password</label>
-              <input
-                type="password"
-                placeholder="••••••••"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
+              <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
             </div>
 
             <div className="row-between">
@@ -77,9 +55,7 @@ export default function Login() {
 
             {error && <p className="error-msg">{error}</p>}
 
-            <button type="submit" disabled={loading} className="login-btn">
-              {loading ? "Signing in..." : "Sign in"}
-            </button>
+            <button type="submit" disabled={loading} className="login-btn" >onClick={handleLogin}Log In</button>
           </form>
 
           {/* <p className="signup-text">
