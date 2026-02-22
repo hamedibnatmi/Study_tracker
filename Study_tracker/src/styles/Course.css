@@ -12,12 +12,15 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    gap: 10px;
 }
 
 
 .course-page-container h1 {
     font-size: 24px;
     font-weight: 600;
+    margin-top: -4px;
+
 }
 
 .course-page-container p {
@@ -29,4 +32,9 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
+}
+
+
+.squareX:hover {
+    color: red;
 }

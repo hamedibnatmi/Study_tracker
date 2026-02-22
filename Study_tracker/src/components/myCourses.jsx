@@ -40,7 +40,7 @@ const MyCourses = () => {
             <h2>My Courses</h2>
             {courses.map((course) => (
                 <div className="course-card" key={course.id} onClick={() => navigate(`/course/${course.id}`)}>
-                    <span className="delete-btn"><SquareX onClick={() => handleDeleteCourse(course.id)} /></span>
+                    {/* <span className="delete-btn"><SquareX onClick={() => handleDeleteCourse(course.id)} /></span> */}
                     <div className="left-side">
                         <div className="circle" style={{ backgroundColor: course.color }} ></div>
                         <div className={`course-info ${course.target_minutes <= getCourseDuration(course.study_sessions) ? "done" : ""}`}>
