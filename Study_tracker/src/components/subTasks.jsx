@@ -60,7 +60,7 @@ const SubTasks = () => {
                     </div>
                 ))
             ))}
-            {isCoursePage && course.subtasks.map((subtask) => (
+            {isCoursePage && course?.subtasks?.length > 0 && course.subtasks.map((subtask) => (
                 <div className="subtask-item">
                     <div className={`subtask ${subtask.completed ? "completed" : ""}`} key={subtask.id}>
                         <input type="checkbox" checked={subtask.completed} onChange={(e) => handleCheck(subtask.id, e.target.checked)} />
