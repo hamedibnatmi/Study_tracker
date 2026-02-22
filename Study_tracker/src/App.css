@@ -8,6 +8,7 @@
 @import "./styles/logIn.css";
 @import "./styles/CoursePage.css";
 @import "./styles/course.css";
+@import './styles/Profile.css';
 @import '@mantine/core/styles.css';
 
 

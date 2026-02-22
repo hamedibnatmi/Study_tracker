@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react"
-import { getCompletedTasks, getAllSubTasks, getTodaysStudyime, insertStudySession, getSessions, getCourseDuration, insertCourse, checkSubTask, insertSubTask, deleteCourse } from "./calculateCourses"
+import { getCompletedTasks, getAllSubTasks, getTodaysStudyime, insertStudySession, getSessions, getCourseDuration, insertCourse, checkSubTask, insertSubTask, deleteCourse, getProfile } from "./calculateCourses"
 import { useAuth } from "../context/AuthContext"
 import supabase from "../SupaBase"
 const AppContext = createContext()
@@ -98,7 +98,8 @@ const AppContextProvider = ({ children }) => {
         insertSubTask,
         deleteCourse,
         course,
-        setCourse
+        setCourse,
+        getProfile
     }
     return (
         <AppContext.Provider value={value}>

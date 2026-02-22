@@ -14,3 +14,12 @@ export const login = async (email, password) => {
         return data
     }
 }
+
+export const logout = async () => {
+    const { error } = await supabase.auth.signOut()
+    if (error) {
+        console.log("Error logging out:", error.message)
+    } else {
+        console.log("User logged out successfully")
+    }
+}

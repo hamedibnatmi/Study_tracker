@@ -71,6 +71,7 @@ const SubTasks = () => {
                     </div>
                 </div>
             ))}
+            {getAllSubTasks(courses).length === 0 && <p>No subtasks found</p>}
         </div>
     </>)
 }
