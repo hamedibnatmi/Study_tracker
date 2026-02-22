@@ -10,9 +10,9 @@ import History from './pages/History'
 import Profile from './pages/Profile'
 import LogIn from './pages/LogIn'
 import CoursePage from './pages/CoursePage'
-import { Navigate } from 'react-router-dom'
-function App() {
+import { Navigate, Outlet } from 'react-router-dom'
 
+function App() {
   // This example how to fetch data from Supabase
   useEffect(() => {
     async function fetchData() {
@@ -26,18 +26,30 @@ function App() {
     // fetchData()
   }, [])
 
-  const { user } = useAuth()
+  function ProtectedLayout() {
+    const { user } = useAuth();
 
+    if (!user) return <Navigate to="/login" replace />;
+
+    return (
+      <div className="app-container">
+        <SideBar />
+        <Outlet />
+      </div>
+    );
+  }
   return (
     <>
       <div className="app-container">
-        <SideBar />
         <Routes>
-          <Route path="/" element={user ? <Dashboard /> : <LogIn />} />
-          <Route path="/history" element={user ? <History /> : <LogIn />} />
-          <Route path="/profile" element={user ? <Profile /> : <LogIn />} />
-          <Route path="/login" element={user ? <Navigate to="/" /> : <LogIn />} />
-          <Route path="/course/:id" element={user ? <CoursePage /> : <LogIn />} />
+          <Route path="/login" element={<LogIn />} />
+
+          <Route element={<ProtectedLayout />}>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/history" element={<History />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/course/:id" element={<CoursePage />} />
+          </Route>
         </Routes>
       </div>
     </>
