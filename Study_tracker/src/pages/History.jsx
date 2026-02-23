@@ -2,8 +2,7 @@ import { Trash2, Calendar, Clock, Circle } from "lucide-react"
 import { useAppContext } from "../context/AppContext"
 import { Loader } from "@mantine/core"
 const History = () => {
-    const { totalHoursUntilNow, totalSessions, completedTasks, studySessions, courses, getCourseDuration, deleteStudySession, refetch, setRefetch, setLoading, loading } = useAppContext()
-    console.log("courses", courses)
+    const { studySessions, courses, deleteStudySession, refetch, setRefetch, setLoading, loading } = useAppContext()
     const calculteTime = (time) => {
         const hours = Math.floor(time / 60)
         const minutes = time % 60
@@ -25,16 +24,13 @@ const History = () => {
         })
         return totalTime
     }
-    const handleDeleteSession = (sessionId, userId) => {
-        console.log("sessionId", sessionId)
-        console.log("userId", userId)
+    const handleDeleteSession = async (sessionId, userId) => {
         setLoading(true)
         try {
-            deleteStudySession(sessionId, userId)
+            await deleteStudySession(sessionId, userId)
+            setRefetch(prev => !prev)
         } catch (error) {
             console.log(error)
-        } finally {
-            setRefetch(prev => !prev)
         }
     }
     return (
