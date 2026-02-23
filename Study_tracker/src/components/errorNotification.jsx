@@ -4,7 +4,6 @@ import { useAppContext } from "../context/AppContext"
 const ErrorNotification = () => {
     const [visible, setVisible] = useState(true)
     const { error, setError } = useAppContext()
-    console.log("error", error)
     return (
         error.length > 0 && error.map((error, index) => (
             visible && <Notification key={index} className="notification" title={error.message} color="red" icon="" onClose={() => { setVisible(false); setError([]) }}>
