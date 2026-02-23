@@ -66,7 +66,7 @@ const History = () => {
                                 <tr key={session.id}>
                                     <td className="course-title"><Circle size={15} style={{ marginRight: "5px", color: getCourseColor(session.course_id), backgroundColor: getCourseColor(session.course_id), borderRadius: "50%" }} />{getCourseTitle(session.course_id)}</td>
                                     <td><Clock size={15} style={{ marginRight: "5px" }} />{calculteTime(session.duration)}</td>
-                                    <td><Calendar size={15} style={{ marginRight: "5px" }} />{session.date}</td>
+                                    <td><Calendar size={15} style={{ marginRight: "5px" }} />{new Date(session.date).toDateString()}</td>
                                     <td><button className="delete-action" onClick={() => handleDeleteSession(session.id, session.user_id)}><Trash2 /></button></td>
                                 </tr>
                             ))}

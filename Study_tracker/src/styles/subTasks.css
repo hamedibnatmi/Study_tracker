@@ -42,8 +42,9 @@
     padding: 10px;
     border-radius: 10px;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     gap: 10px;
 }
 
@@ -93,4 +94,17 @@
 .add-task-button.disabled {
     background-color: #ccc;
     cursor: not-allowed;
+}
+
+.subtask-item .due-date p {
+    font-size: 14px;
+    color: #888;
+    text-align: right;
+}
+
+.subtask-item .left-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
 }

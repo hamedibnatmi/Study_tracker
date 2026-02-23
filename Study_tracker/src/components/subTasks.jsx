@@ -49,6 +49,24 @@ const SubTasks = () => {
                 course.subtasks.map((subtask) => (
 
                     <div className="subtask-item">
+                        <div className="left-side">
+                            <div className={`subtask ${subtask.completed ? "completed" : ""}`} key={subtask.id}>
+                                <input type="checkbox" checked={subtask.completed} onChange={(e) => handleCheck(subtask.id, e.target.checked)} />
+                                <p>{subtask.title}</p>
+                            </div>
+                            <div className="course" style={{ backgroundColor: course.color }} key={course.id}>
+                                <p>{course.title}</p>
+                            </div>
+                        </div>
+                        <div className="due-date">
+                            <p>Due Date: {new Date(subtask.due_date).toDateString()}</p>
+                        </div>
+                    </div>
+                ))
+            ))}
+            {isCoursePage && course?.subtasks?.length > 0 && course.subtasks.map((subtask) => (
+                <div className="subtask-item">
+                    <div className="left-side">
                         <div className={`subtask ${subtask.completed ? "completed" : ""}`} key={subtask.id}>
                             <input type="checkbox" checked={subtask.completed} onChange={(e) => handleCheck(subtask.id, e.target.checked)} />
                             <p>{subtask.title}</p>
@@ -57,16 +75,8 @@ const SubTasks = () => {
                             <p>{course.title}</p>
                         </div>
                     </div>
-                ))
-            ))}
-            {isCoursePage && course?.subtasks?.length > 0 && course.subtasks.map((subtask) => (
-                <div className="subtask-item">
-                    <div className={`subtask ${subtask.completed ? "completed" : ""}`} key={subtask.id}>
-                        <input type="checkbox" checked={subtask.completed} onChange={(e) => handleCheck(subtask.id, e.target.checked)} />
-                        <p>{subtask.title}</p>
-                    </div>
-                    <div className="course" style={{ backgroundColor: course.color }} key={course.id}>
-                        <p>{course.title}</p>
+                    <div className="due-date">
+                        <p>Due Date: {new Date(subtask.due_date).toDateString()}</p>
                     </div>
                 </div>
             ))}
