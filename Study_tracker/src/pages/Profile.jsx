@@ -23,12 +23,18 @@ const Profile = () => {
             try {
                 const data = await getProfile(user)
                 console.log("Profile Data: ", data)
+                let totalStudyTime = studySessions.reduce((acc, session) => acc + session.duration, 0)
+                if (totalStudyTime > 60) {
+                    totalStudyTime = `${totalStudyTime / 60}` + " h " + `${totalStudyTime % 60}` + " min"
+                } else {
+                    totalStudyTime = `${totalStudyTime}` + " min"
+                }
                 setProfileData({
                     full_name: data[0].full_name,
                     email: data[0].email,
                     courses_count: courses.length,
                     sessions_count: studySessions.length,
-                    total_study_time: studySessions.reduce((acc, session) => acc + session.duration, 0)
+                    total_study_time: totalStudyTime
                 })
             } catch (error) {
                 console.log(error)
@@ -40,7 +46,7 @@ const Profile = () => {
     }, [])
     return (
         <div className="profile-container">
-            <h1>Profile</h1>
+            <h1 className="profile-title">Profile</h1>
             {loading && <div className="profile-loader"><LoaderMantine size={"xl"} color="purple" /></div>}
             {!loading && <div className="profile-box">
                 <div className="profile-info">

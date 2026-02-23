@@ -34,7 +34,7 @@ const AppContextProvider = ({ children }) => {
                     .select(`
                     *,
                     study_sessions(id,duration, date),
-                    subtasks(id, title, completed)
+                    subtasks(id, title, completed, due_date)
                 `)
                     .eq('user_id', user);
 
