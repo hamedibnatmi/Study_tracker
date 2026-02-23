@@ -1,0 +1,65 @@
+.history-page {
+    width: 100vw;
+    height: 100vh;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+
+}
+
+.history-page-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.total-time-box {
+    min-width: 100%;
+    min-height: fit-content;
+    background-color: #8c5cfa;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #fff;
+}
+
+.history-page .title h1 {
+    text-align: start;
+    font-size: 38px;
+}
+
+.history-page .title h5 {
+    text-align: start;
+}
+
+.history-page .title {
+    margin-left: 0px;
+
+}
+
+.history-page .total-time {
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.history-page .total-sessions {
+    font-size: 16px;
+}
+
+.history-page .delete-action {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.history-page .delete-action:hover {
+    color: #ff0000;
+}
