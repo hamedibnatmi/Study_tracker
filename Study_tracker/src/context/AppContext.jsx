@@ -24,6 +24,7 @@ const AppContextProvider = ({ children }) => {
     const [course, setCourse] = useState(null)
 
     useEffect(() => {
+        if (!user) return;
         async function fetchData() {
             setLoading(true)
             try {
@@ -53,6 +54,7 @@ const AppContextProvider = ({ children }) => {
     }, [refetch, user])
 
     useEffect(() => {
+        if (!user) return;
         async function fetchSessions() {
             const sessions = await getSessions(user)
             setStudySessions(sessions)
