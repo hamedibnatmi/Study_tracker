@@ -25,9 +25,9 @@ const Profile = () => {
                 console.log("Profile Data: ", data)
                 let totalStudyTime = studySessions.reduce((acc, session) => acc + session.duration, 0)
                 if (totalStudyTime > 60) {
-                    totalStudyTime = `${totalStudyTime / 60}h ${totalStudyTime % 60}min`
+                    totalStudyTime = `${totalStudyTime / 60}` + " h " + `${totalStudyTime % 60}` + " min"
                 } else {
-                    totalStudyTime = `${totalStudyTime}min`
+                    totalStudyTime = `${totalStudyTime}` + " min"
                 }
                 setProfileData({
                     full_name: data[0].full_name,
@@ -72,7 +72,7 @@ const Profile = () => {
                     </div>
                     <div className="total-study-time">
                         <p>Total Study Time</p>
-                        <p>{profileData?.total_study_time} min</p>
+                        <p>{profileData?.total_study_time}</p>
                     </div>
                 </div>
                 <button className="logout-btn" onClick={handleLogout}>Log Out</button>
