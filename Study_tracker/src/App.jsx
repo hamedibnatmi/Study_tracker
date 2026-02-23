@@ -13,24 +13,9 @@ import CoursePage from './pages/CoursePage'
 import { Navigate, Outlet } from 'react-router-dom'
 
 function App() {
-  // This example how to fetch data from Supabase
-  useEffect(() => {
-    async function fetchData() {
-      const { data, error } = await supabase.from("courses").select("*").eq("courses__userId", "user-001")
-      if (error) {
-        console.error("Error fetching courses:", error)
-      } else {
-        console.log("Fetched courses:", data)
-      }
-    }
-    // fetchData()
-  }, [])
-
   function ProtectedLayout() {
     const { user } = useAuth();
-
     if (!user) return <Navigate to="/login" replace />;
-
     return (
       <div className="app-container">
         <SideBar />
@@ -38,6 +23,7 @@ function App() {
       </div>
     );
   }
+
   return (
     <>
       <div className="app-container">

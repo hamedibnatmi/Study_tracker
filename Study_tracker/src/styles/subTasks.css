@@ -78,9 +78,19 @@
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
+    opacity: 1;
+}
+
+.no-subtasks {
+    text-align: center;
+    color: #888;
 }
 
 .add-task-form button:hover {
-    background-color: #fff;
-    color: purple;
+    opacity: 0.8;
+}
+
+.add-task-button.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }

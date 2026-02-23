@@ -8,7 +8,9 @@
 @import "./styles/logIn.css";
 @import "./styles/CoursePage.css";
 @import "./styles/course.css";
+@import "./styles/History.css";
 @import './styles/Profile.css';
+@import './styles/erroNotification.css';
 @import '@mantine/core/styles.css';
 
 

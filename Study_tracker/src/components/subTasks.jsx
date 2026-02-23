@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom"
 const SubTasks = () => {
     const params = useParams()
     const { courses, completedTasks, getAllSubTasks, checkSubTask, refetch, setRefetch, user, insertSubTask } = useAppContext()
-    console.log("course", courses.find((course) => course.id === params.id))
     const handleCheck = async (subtaskId, completed) => {
         if (completed) {
             await checkSubTask(subtaskId, user, true)
@@ -42,7 +41,7 @@ const SubTasks = () => {
                     <input type="text" id="task-title" placeholder="Enter Task Title" value={subTaskTitle} onChange={(e) => setSubTaskTitle(e.target.value)} />
                     <label htmlFor="task-due-date">Task Due Date</label>
                     <input type="date" id="task-due-date" placeholder="Enter Task Due Date" value={subTaskDueDate} onChange={(e) => setSubTaskDueDate(e.target.value)} />
-                    <button type="submit">Add Task</button>
+                    <button type="submit" className={subTaskTitle === "" || subTaskDueDate === "" ? "add-task-button disabled" : "add-task-button"} disabled={subTaskTitle === "" || subTaskDueDate === ""}>Add Task</button>
                 </form>
             </div>
             }
@@ -71,7 +70,8 @@ const SubTasks = () => {
                     </div>
                 </div>
             ))}
-            {getAllSubTasks(courses).length === 0 && <p>No subtasks found</p>}
+            {!isCoursePage && getAllSubTasks(courses).length === 0 && <p className="no-subtasks">You have no subtasks</p>}
+            {isCoursePage && course?.subtasks?.length === 0 && <p className="no-subtasks">You have no subtasks</p>}
         </div>
     </>)
 }
