@@ -46,7 +46,7 @@ const Profile = () => {
     }, [])
     return (
         <div className="profile-container">
-            <h1>Profile</h1>
+            <h1 className="profile-title">Profile</h1>
             {loading && <div className="profile-loader"><LoaderMantine size={"xl"} color="purple" /></div>}
             {!loading && <div className="profile-box">
                 <div className="profile-info">
