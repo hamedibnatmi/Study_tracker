@@ -22,6 +22,7 @@ const AppContextProvider = ({ children }) => {
     const [selectedColor, setSelectedColor] = useState("red")
     const [showAddCourseForm, setShowAddCourseForm] = useState(false)
     const [course, setCourse] = useState(null)
+    const [error, setError] = useState([])
 
     useEffect(() => {
         if (!user) return;
@@ -38,13 +39,13 @@ const AppContextProvider = ({ children }) => {
                     .eq('user_id', user);
 
                 if (error) throw error;
-                console.log("Courses Data:", data)
                 setCourses(data)
                 setTotalCourses(data.length)
                 setCompletedTasks(getCompletedTasks(data));
                 setTotalHoursUntilNow(getTodaysStudyime(data))
             } catch (error) {
                 console.error("Error fetching courses:", error)
+                setError(prev => [...prev, { type: "error", message: "An error occurred while fetching courses" }])
             } finally {
                 setLoading(false)
             }
@@ -56,8 +57,13 @@ const AppContextProvider = ({ children }) => {
     useEffect(() => {
         if (!user) return;
         async function fetchSessions() {
-            const sessions = await getSessions(user)
-            setStudySessions(sessions)
+            try {
+                const sessions = await getSessions(user)
+                setStudySessions(sessions)
+            } catch (error) {
+                console.error("Error fetching sessions:", error)
+                setError(prev => [...prev, { type: "error", message: "An error occurred while fetching sessions" }])
+            }
         }
         fetchSessions()
     }, [refetch, user])
@@ -102,7 +108,9 @@ const AppContextProvider = ({ children }) => {
         course,
         setCourse,
         getProfile,
-        deleteStudySession
+        deleteStudySession,
+        error,
+        setError
     }
     return (
         <AppContext.Provider value={value}>

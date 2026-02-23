@@ -5,10 +5,12 @@ import { Clock, BookOpen, Trophy } from "lucide-react"
 import { Loader as LoaderMantine } from "@mantine/core"
 import MyCourses from "../components/myCourses"
 import SubTasks from "../components/subTasks"
+import ErrorNotification from "../components/errorNotification"
 const Dashboard = () => {
     const { totalHoursUntilNow, totalCourses, completedTasks, loading } = useAppContext()
     return (
         <div className="dashboard">
+            <ErrorNotification />
             <div className="title">
                 <h1>Home</h1>
                 <h5>Welcome to your Study Tracker! Here's your study progress today.</h5>
