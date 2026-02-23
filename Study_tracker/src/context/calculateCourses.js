@@ -49,7 +49,9 @@ export async function insertStudySession(duration, userId, courseId) {
     if (error) {
         console.error("Error inserting study session:", error)
     } else {
-        console.log("Study session inserted:", data)
+        if (data) {
+            console.log("Study session inserted:", data)
+        }
     }
 }
 
@@ -159,5 +161,19 @@ export async function getProfile(userId) {
     } else {
         console.log("Fetched profile:", data)
         return data;
+    }
+}
+
+export async function deleteStudySession(sessionId, userId) {
+    const { data, error } = await supabase
+        .from('study_sessions')
+        .delete()
+        .eq('id', sessionId)
+        .eq('user_id', userId);
+
+    if (error) {
+        console.error("Error deleting study session:", error)
+    } else {
+        console.log("Study session deleted:", data)
     }
 }

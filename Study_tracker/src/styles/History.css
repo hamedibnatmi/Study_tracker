@@ -92,3 +92,9 @@
     align-items: center;
     margin-top: 10px;
 }
+
+.no-sessions {
+    margin-left: 30%;
+    margin-top: 20%;
+    color: #888;
+}

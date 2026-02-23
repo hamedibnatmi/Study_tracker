@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom"
 const SubTasks = () => {
     const params = useParams()
     const { courses, completedTasks, getAllSubTasks, checkSubTask, refetch, setRefetch, user, insertSubTask } = useAppContext()
-    console.log("course", courses.find((course) => course.id === params.id))
     const handleCheck = async (subtaskId, completed) => {
         if (completed) {
             await checkSubTask(subtaskId, user, true)
@@ -71,7 +70,8 @@ const SubTasks = () => {
                     </div>
                 </div>
             ))}
-            {getAllSubTasks(courses).length === 0 && <p>No subtasks found</p>}
+            {!isCoursePage && getAllSubTasks(courses).length === 0 && <p className="no-subtasks">You have no subtasks</p>}
+            {isCoursePage && course?.subtasks?.length === 0 && <p className="no-subtasks">You have no subtasks</p>}
         </div>
     </>)
 }

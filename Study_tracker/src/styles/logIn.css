@@ -12,7 +12,8 @@
     margin-right: auto;
     margin-top: 15%;
     width: 400px;
-    height: 300px;
+    height: fit-content;
+    padding: 20px;
     background-color: rgb(124, 53, 124);
     border-radius: 10px;
     display: flex;

@@ -1,7 +1,8 @@
 import { Trash2, Calendar, Clock, Circle } from "lucide-react"
 import { useAppContext } from "../context/AppContext"
+import { Loader } from "@mantine/core"
 const History = () => {
-    const { totalHoursUntilNow, totalSessions, completedTasks, studySessions, courses, getCourseDuration } = useAppContext()
+    const { totalHoursUntilNow, totalSessions, completedTasks, studySessions, courses, getCourseDuration, deleteStudySession, refetch, setRefetch, setLoading, loading } = useAppContext()
     console.log("courses", courses)
     const calculteTime = (time) => {
         const hours = Math.floor(time / 60)
@@ -24,19 +25,33 @@ const History = () => {
         })
         return totalTime
     }
+    const handleDeleteSession = (sessionId, userId) => {
+        console.log("sessionId", sessionId)
+        console.log("userId", userId)
+        setLoading(true)
+        try {
+            deleteStudySession(sessionId, userId)
+        } catch (error) {
+            console.log(error)
+        } finally {
+            setRefetch(prev => !prev)
+        }
+    }
     return (
         <div className="history-page">
-            <div className="title">
+            {loading && <div className="loader"><Loader /></div>}
+            {!loading && <div className="title">
                 <h1>Study History</h1>
                 <h5>View your past study sessions</h5>
-            </div>
-            <div className="history-page-container">
+            </div>}
+            {!loading && <div className="history-page-container">
                 <div className="total-time-box">
                     <p>Total Study Time</p>
                     <p className="total-time">{calculteTime(gettotalHoursUntilNow())}</p>
                     <p className="total-sessions">{studySessions.length} sessions recorded</p>
                 </div>
-                <div className="history-list">
+                {studySessions.length === 0 && <p className="no-sessions">You have no study sessions</p>}
+                {studySessions.length > 0 && <div className="history-list">
                     <table>
                         <thead>
                             <tr>
@@ -52,13 +67,13 @@ const History = () => {
                                     <td className="course-title"><Circle size={15} style={{ marginRight: "5px", color: getCourseColor(session.course_id), backgroundColor: getCourseColor(session.course_id), borderRadius: "50%" }} />{getCourseTitle(session.course_id)}</td>
                                     <td><Clock size={15} style={{ marginRight: "5px" }} />{calculteTime(session.duration)}</td>
                                     <td><Calendar size={15} style={{ marginRight: "5px" }} />{session.date}</td>
-                                    <td><button className="delete-action"><Trash2 /></button></td>
+                                    <td><button className="delete-action" onClick={() => handleDeleteSession(session.id, session.user_id)}><Trash2 /></button></td>
                                 </tr>
                             ))}
                         </tbody>
                     </table>
-                </div>
-            </div>
+                </div>}
+            </div>}
         </div>
     )
 }

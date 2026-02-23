@@ -80,6 +80,11 @@
     margin-top: 10px;
 }
 
+.no-subtasks {
+    text-align: center;
+    color: #888;
+}
+
 .add-task-form button:hover {
     background-color: #fff;
     color: purple;
