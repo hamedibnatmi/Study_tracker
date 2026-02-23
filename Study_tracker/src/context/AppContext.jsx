@@ -12,7 +12,7 @@ const AppContextProvider = ({ children }) => {
     const [totalCourses, setTotalCourses] = useState(0)
     const [totalCompletedCourses, setTotalCompletedCourses] = useState(0)
     const [completedTasks, setCompletedTasks] = useState(0)
-    const [timer, setTimer] = useState(55)
+    const [timer, setTimer] = useState(59)
     const [sessionStarted, setSessionStarted] = useState(false)
     const [currentCourse, setCurrentCourse] = useState(null)
     const [studySessions, setStudySessions] = useState([])
