@@ -41,7 +41,7 @@ const SubTasks = () => {
                     <input type="text" id="task-title" placeholder="Enter Task Title" value={subTaskTitle} onChange={(e) => setSubTaskTitle(e.target.value)} />
                     <label htmlFor="task-due-date">Task Due Date</label>
                     <input type="date" id="task-due-date" placeholder="Enter Task Due Date" value={subTaskDueDate} onChange={(e) => setSubTaskDueDate(e.target.value)} />
-                    <button type="submit">Add Task</button>
+                    <button type="submit" className={subTaskTitle === "" || subTaskDueDate === "" ? "add-task-button disabled" : "add-task-button"} disabled={subTaskTitle === "" || subTaskDueDate === ""}>Add Task</button>
                 </form>
             </div>
             }
